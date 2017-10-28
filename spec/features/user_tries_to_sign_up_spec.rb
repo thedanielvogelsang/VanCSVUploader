@@ -11,6 +11,7 @@ RSpec.feature 'User tries to sign in' do
       fill_in 'user[password_confirmation]', with: 'password'
       click_on 'Sign Up!'
       expect(current_path).to eq(csv_loader_path)
+      expect(page).to have_content("hello world")
     end
   end
   context 'with incorrect data' do
