@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       flash[:notice] = "Logged in as #{@user.username}"
     end
-    redirect_to csv_loader_path(@user.id)
+    redirect_to csv_loader_path
   end
 
   private

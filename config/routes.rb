@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   get '/sign-up', as: :new_user, to: 'users#new'
   resources :users, only: [:create]
 
-  get '/vanCSV_uploader', as: :csv_loader, to: 'csvloader#show'
+  get '/vanCSV_uploader', as: :csv_loader, to: 'csv_loader#show'
 
 end
