@@ -13,4 +13,16 @@ RSpec.feature 'User tries to sign in' do
       expect(current_path).to eq(csv_loader_path)
     end
   end
+  context 'with incorrect data' do
+    it 'and is rerouted back to the sign up page' do
+      visit('/')
+      click_link('Sign Up')
+      expect(current_path).to eq(new_user_path)
+      fill_in 'user[name]', with: 'BlueberryJim'
+      fill_in 'user[password]', with: 'password'
+      fill_in 'user[password_confirmation]', with: 'password123'
+      click_on 'Sign Up!'
+      expect(current_path).to eq(new_user_path)
+    end
+  end
 end
