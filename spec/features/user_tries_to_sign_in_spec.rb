@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.feature 'User tries to sign in' do
   context 'with correct data' do
+    before(:each) do
+      @user = User.create(username: 'dvog', password: '123abc')
+    end
     it 'and is rerouted to the CSV loading page' do
       visit('/')
       click_link('Sign In')
