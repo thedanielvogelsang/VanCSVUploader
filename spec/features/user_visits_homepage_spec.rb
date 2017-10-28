@@ -11,5 +11,9 @@ RSpec.feature("user visits homepage") do
     click_link('Sign Up')
     expect(current_path).to eq(new_user_path)
     expect(current_path).to eq('/sign-up')
+    expect(page).to have_content("Username")
+    expect(page).to have_content("Password")
+    expect(page).to have_content("Password Confirmation")
+    expect(page).to have_content('Sign Up')
   end
 end
