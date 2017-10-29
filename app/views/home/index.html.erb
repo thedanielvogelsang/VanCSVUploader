@@ -4,3 +4,5 @@
 <button>
   <%= link_to 'Sign In', login_path %>
 </button>
+
+<%= react_component("HomeMessage", props: {text: 'Hey you did it! Your first react component!'}, prerender: true) %>
