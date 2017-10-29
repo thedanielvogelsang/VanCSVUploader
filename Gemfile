@@ -32,7 +32,7 @@ gem 'sidekiq'
 gem 'bcrypt', '~> 3.1.7'
 gem 'webpacker', '~> 3.0'
 gem 'figaro'
-gem "react_on_rails", "~> 6"
+gem 'react-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
