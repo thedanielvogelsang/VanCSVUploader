@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       redirect_to csv_loader_path
     else
       redirect_to :new_user
+      flash[:notice] = "Unsuccessful user creation, check passwords and try again"
     end
   end
 

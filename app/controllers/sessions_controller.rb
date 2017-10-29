@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
+      flash[:message] = "Login successful"
       redirect_to csv_loader_path
     else
       flash[:message] = "Username/password invalid, try again"
@@ -15,7 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
   end
-  
+
   private
     def session_params
       params.require(:session).permit(:username, :password)
