@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe CsvImporterJob, type: :job do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'can receive upload a file' do
+    ActiveJob::Base.queue_adapter = :test
+
+    expect {CsvImporterJob.perform_later('file')
+    }.to have_enqueued_job
+  end
 end

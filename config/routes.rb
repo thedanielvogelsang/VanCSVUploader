@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   resources :users, only: [:create]
 
   get '/vanCSV_uploader', as: :csv_loader, to: 'csv_loader#show'
+  post '/vanCSV_uploader', as: :uploads, to: 'csv_loader#create'
 
 end

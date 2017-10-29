@@ -13,7 +13,8 @@ RSpec.feature 'User tries to sign in' do
       fill_in "Password", with: '123abc'
       click_on('Sign In!')
       expect(current_path).to eq(csv_loader_path)
-      expect(page).to have_content("hello world")
+      expect(page).to have_content("Upload CSV:")
+      expect(page).to have_button("Upload CSV to VAN")
     end
   end
   context 'with incorrect data' do
