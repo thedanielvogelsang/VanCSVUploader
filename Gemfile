@@ -30,10 +30,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'sidekiq'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem "react_on_rails"
 gem 'webpacker', '~> 3.0'
 gem 'figaro'
-
+gem "react_on_rails", "~> 6"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
