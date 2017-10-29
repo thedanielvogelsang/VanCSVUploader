@@ -26,6 +26,7 @@ RSpec.feature 'User tries to sign in' do
       fill_in "Password", with: 'abc123'
       click_on('Sign In!')
       expect(current_path).to eq(login_path)
+      expect(page).to have_content("Username/password invalid, try again")
     end
   end
 end

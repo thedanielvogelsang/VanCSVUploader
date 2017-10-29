@@ -25,6 +25,7 @@ RSpec.feature 'User tries to sign in' do
       fill_in 'user[password_confirmation]', with: 'password123'
       click_on 'Sign Up!'
       expect(current_path).to eq(new_user_path)
+      expect(page).to have_content("Unsuccessful user creation, check passwords and try again")
     end
   end
 end
