@@ -6,7 +6,7 @@ class CsvLoaderController < ApplicationController
   end
 
   def create
-    file_path_to_save_to = './tmp/file.csv'
+    file_path_to_save_to = "./tmp/#{DateTime.now}_file.csv"
     File.write(file_path_to_save_to, params[:file].tempfile.read)
     CsvImporterJob.perform_later(file_path_to_save_to)
     redirect_to csv_loader_path, notice: "File Uploaded. A summary will be sent upon completion."
