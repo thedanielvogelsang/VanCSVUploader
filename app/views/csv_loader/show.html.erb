@@ -1,5 +1,5 @@
 <h4>Upload CSV:</h4>
 <%= form_tag uploads_path, multipart: true do %>
   <%= file_field_tag :file %>
-  <%= submit_tag "Upload CSV to VAN", :class => 'btn btn-warning start-rec' %>
+  <%= submit_tag "Upload CSV to VAN", :class => 'btn btn-warning start-rec' %> <!-- add :accept['csv']? -->
 <% end %>
