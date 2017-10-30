@@ -36,6 +36,10 @@ export default class Accept extends React.Component {
             }
           </ul>
         </aside>
+        <form enctype="multipart/form-data" action="/vanCSV_uploader" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="cEPXaGPKr1X+dKpbfMx4wGXJVLBjtEhivYnNMJtTer81uf7xmJlVIUZnozowR+xDy92JXPCXBxYKvISzz3cwDw==">
+          <input type="file" name="file" id="file">
+          <input type="submit" name="commit" value="Upload CSV to VAN" className="btn btn-warning start-rec" data-disable-with="Upload CSV to VAN"> <!-- add :accept['csv']? -->
+        </form>
       </section>
     );
   }
