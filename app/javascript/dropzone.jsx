@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 import _ from 'lodash';
 
 var style = {
@@ -124,9 +125,9 @@ class DropZonePlace extends React.Component{
 }
 
 DropZonePlace.propTypes = {
-  onDrop: React.PropTypes.func,
-  onDragOver: React.PropTypes.func,
-  onDragLeave: React.PropTypes.func,
+  onDrop: PropTypes.func,
+  onDragOver: PropTypes.func,
+  onDragLeave: PropTypes.func,
 };
 
 
