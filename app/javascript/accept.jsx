@@ -1,3 +1,6 @@
+import React from 'react'
+import Dropzone from 'react-dropzone'
+
 export default class Accept extends React.Component {
   constructor() {
     super()
@@ -37,5 +40,3 @@ export default class Accept extends React.Component {
     );
   }
 }
-
-<Accept />
