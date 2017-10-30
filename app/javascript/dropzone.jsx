@@ -19,8 +19,8 @@ class DropZonePlace extends React.Component{
       body: {}
     };
     this.uploadFile = '';
-    this.storeCSVFile = this.storeCSVFile.bind(this);
     this.uploadCSVFile = this.uploadCSVFile.bind(this);
+    this.postCSVFile = this.postCSVFile.bind(this);
     this.dragAndDrop = this.dragAndDrop.bind(this);
     this.onDragOver = this.onDragOver.bind(this);
     this.onDragLeave = this.onDragLeave.bind(this);
@@ -66,23 +66,25 @@ class DropZonePlace extends React.Component{
     this.setState({status: 'idle', statusMsg: (<p>Click or drop files here to upload...</p>)});
   }
 
-  storeCSVFile(e) {
+  uploadCSVFile(e) {
     e.preventDefault();
     let file = e.target.files[0];
     this.setState({
-      body: file
+      body: file,
+      message: "CSV uploaded. Click 'Submit' to launch vanCSV_Uploader",
+      statusMsg: ""
     })
+    console.log(file)
   }
 
-  uploadCSVFile(e) {
+  postCSVFile(e) {
     e.preventDefault();
     fetch('/vanCSV_uploader', {
       method: 'post',
-      body: file
+      body: this.state.body
     }).then( () => {
       console.log('posted the file to controller')
       this.setState({
-        message: "CSV uploaded. Click 'Submit' to launch vanCSV_Uploader"
       })
     });
   }
@@ -105,10 +107,10 @@ class DropZonePlace extends React.Component{
 
 	render(){
 		let {imagePreviewUrl} = this.state;
-    let imagePreview = this.state.statusMsg;
+    let uploaderStatus = this.state.statusMsg;
     let message = this.state.message;
     if (imagePreviewUrl) {
-      imagePreview = (<img src={imagePreviewUrl} className='dropPreview'/>);
+      uploaderStatus = (<img src={imagePreviewUrl} className='dropPreview'/>);
       // message = (<p className='upload_success'>message</p>)
     }
 		return (
@@ -117,11 +119,12 @@ class DropZonePlace extends React.Component{
             onDragLeave={this.onDragLeave}
             className='dropZoneContainer'
           >
-						<div className='dropZone' id="upload-file-container" style={this.state.style}>{imagePreview}
-							<input type='file' name='file-upload' onChange={this.storeCSVFile} />
+						<div className='dropZone' id="upload-file-container" style={this.state.style}>{uploaderStatus}
+							<input type='file' name='file-upload' onChange={this.uploadCSVFile} />
+              <input type='submit' onClick={this.postCSVFile} />
 						</div>
             <div className='upload_message'>
-            {message}
+            <br/><p>{message}</p>
             </div>
         		<a href="" onClick={this.dragAndDrop} className="icon-button cloudicon">
               <span><i className="fa fa-cloud-upload"></i></span>
