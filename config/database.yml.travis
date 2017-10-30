@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: Van_CSV_Uploader_test
+  username: postgres
