@@ -3,3 +3,7 @@
   <%= file_field_tag :file %>
   <%= submit_tag "Upload CSV to VAN", :class => 'btn btn-warning start-rec' %> <!-- add :accept['csv']? -->
 <% end %>
+</br>
+<hr>
+
+<%= react_component("DropZonePlace", prerender: true) %>
