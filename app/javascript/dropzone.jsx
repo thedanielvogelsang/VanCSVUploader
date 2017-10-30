@@ -2,11 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash';
 
-var style = {
-  background: 'red'
-};
-
-var timer = '';
+// var style = {
+//   background: 'red'
+// };
 
 class DropZonePlace extends React.Component{
 
@@ -15,19 +13,22 @@ class DropZonePlace extends React.Component{
 		this.state = {
       imagePreviewUrl: '',
       status: 'idle',
+      message: '',
       statusMsg: (<p>Click or drop files here to upload...</p>),
-      style: {}
+      style: {},
+      body: {}
     };
     this.uploadFile = '';
-    this.handleImageChange = this.handleImageChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.storeCSVFile = this.storeCSVFile.bind(this);
+    this.uploadCSVFile = this.uploadCSVFile.bind(this);
+    this.dragAndDrop = this.dragAndDrop.bind(this);
     this.onDragOver = this.onDragOver.bind(this);
     this.onDragLeave = this.onDragLeave.bind(this);
     this.setOriginalText = this.setOriginalText.bind(this);
 
 	}
 
-	handleSubmit(e) {
+	dragAndDrop(e) {
     e.preventDefault();
     if (!this.uploadFile) {
     	return;
@@ -55,7 +56,7 @@ class DropZonePlace extends React.Component{
             timer = _.delay( this.setOriginalText, 1000);
 					};
 		});
-      this.uploadFile = '';
+    this.uploadFile = '';
 		this.setState({
         imagePreviewUrl: ''
     });
@@ -65,24 +66,25 @@ class DropZonePlace extends React.Component{
     this.setState({status: 'idle', statusMsg: (<p>Click or drop files here to upload...</p>)});
   }
 
-  handleImageChange(e) {
+  storeCSVFile(e) {
     e.preventDefault();
-    if (timer !== '') {
-      clearTimeout(timer);
-    };
-    let reader = new FileReader();
     let file = e.target.files[0];
+    this.setState({
+      body: file
+    })
+  }
 
-
-    reader.onloadend = () => {
+  uploadCSVFile(e) {
+    e.preventDefault();
+    fetch('/vanCSV_uploader', {
+      method: 'post',
+      body: file
+    }).then( () => {
+      console.log('posted the file to controller')
       this.setState({
-        imagePreviewUrl: reader.result,
-        style: {background: ''}
-      });
-      this.uploadFile = file;
-    }
-
-    reader.readAsDataURL(file)
+        message: "CSV uploaded. Click 'Submit' to launch vanCSV_Uploader"
+      })
+    });
   }
 
   onDragOver(e) {
@@ -104,8 +106,10 @@ class DropZonePlace extends React.Component{
 	render(){
 		let {imagePreviewUrl} = this.state;
     let imagePreview = this.state.statusMsg;
+    let message = this.state.message;
     if (imagePreviewUrl) {
       imagePreview = (<img src={imagePreviewUrl} className='dropPreview'/>);
+      // message = (<p className='upload_success'>message</p>)
     }
 		return (
           <div
@@ -114,10 +118,13 @@ class DropZonePlace extends React.Component{
             className='dropZoneContainer'
           >
 						<div className='dropZone' id="upload-file-container" style={this.state.style}>{imagePreview}
-							<input type='file' name='file-upload' onChange={this.handleImageChange} />
+							<input type='file' name='file-upload' onChange={this.storeCSVFile} />
 						</div>
-        		<a href="" onClick={this.handleSubmit} className="icon-button cloudicon">
-              <i className="fa fa-cloud-upload"></i><span></span>
+            <div className='upload_message'>
+            {message}
+            </div>
+        		<a href="" onClick={this.dragAndDrop} className="icon-button cloudicon">
+              <span><i className="fa fa-cloud-upload"></i></span>
             </a>
           </div>
       );
@@ -125,7 +132,7 @@ class DropZonePlace extends React.Component{
 }
 
 DropZonePlace.propTypes = {
-  onDrop: PropTypes.func,
+
   onDragOver: PropTypes.func,
   onDragLeave: PropTypes.func,
 };
