@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import _ from 'lodash';
+import _ from 'lodash'
 import Dropzone from 'react-dropzone'
+import ReactInterval from 'react-interval'
 
 class DropZonePlace extends React.Component{
 
@@ -21,6 +22,7 @@ class DropZonePlace extends React.Component{
     this.onDragOver = this.onDragOver.bind(this);
     this.onDragLeave = this.onDragLeave.bind(this);
     this.onDrop = this.onDrop.bind(this);
+    this.timeOut = this.timeOut.bind(this);
 	}
 
 	dragAndDrop(e) {
@@ -68,6 +70,9 @@ class DropZonePlace extends React.Component{
       message: "CSV uploaded. Click 'Submit' to launch vanCSV_Uploader",
       statusMsg: ""
     })
+    ReactDOM.findDOMNode(this.refs.uploadBtn).style = 'display:none'
+    ReactDOM.findDOMNode(this.refs.submitBtn).value = 'Submit CSV to VAN'
+    ReactDOM.findDOMNode(this.refs.submitBtn2).style = 'visibility:visible'
   }
 
   postCSVFile(e) {
@@ -77,11 +82,10 @@ class DropZonePlace extends React.Component{
         method: 'post',
         body: this.state.body
       }).then( () => {
-        console.log('posted the file to controller')
         this.setState({
           message: 'Successful Post!'
         })
-      });
+      })
     }else{
       this.setState({
         message: 'Error. No CSV attached'
@@ -105,6 +109,9 @@ class DropZonePlace extends React.Component{
     });
   }
 
+  timeOut() {
+    this.setTimeout(console.log('hello'), 6000)
+  }
 
 	render(){
     let uploaderStatus = this.state.statusMsg;
@@ -132,6 +139,7 @@ class DropZonePlace extends React.Component{
       );
 	}
 }
+// callback={() => this.setState({backgroundUrl: this.state.images[this.state.count + 1]})} />
 
 DropZonePlace.propTypes = {
   onDragOver: PropTypes.func,
