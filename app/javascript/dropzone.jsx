@@ -12,7 +12,7 @@ class DropZonePlace extends React.Component{
       status: 'idle',
       message: '',
       statusMsg: (<p>Click or drop files here to upload...</p>),
-      style: {},
+      style: {marginTop: '30px'},
       body: {}
     };
     this.uploadFile = '';
@@ -40,9 +40,19 @@ class DropZonePlace extends React.Component{
   onDrop(acceptedFiles, rejectedFiles) {
     this.setState({
       body: acceptedFiles[0],
-      message: "CSV uploaded. Click 'Submit' to launch vanCSV_Uploader",
-      statusMsg: ""
+      statusMsg: "",
+      style: {background: '#F7ACCF',
+                marginTop: '30px'},
     })
+    if(!acceptedFiles[0]){
+      this.setState({
+        message: "File must be a CSV, try again with the correct file format"
+      })
+    }else {
+      this.setState({
+        message: "CSV uploaded. Click 'Submit' to launch vanCSV_Uploader"
+      })
+    }
   }
 
   setOriginalText(){
@@ -53,6 +63,8 @@ class DropZonePlace extends React.Component{
     e.preventDefault();
     let file = e.target.files[0];
     this.setState({
+      style: {background: '#F7ACCF',
+              marginTop: '30px'},
       body: file,
       message: "CSV uploaded. Click 'Submit' to launch vanCSV_Uploader",
       statusMsg: ""
@@ -67,6 +79,7 @@ class DropZonePlace extends React.Component{
     }).then( () => {
       console.log('posted the file to controller')
       this.setState({
+
       })
     });
   }
@@ -75,14 +88,15 @@ class DropZonePlace extends React.Component{
     e.preventDefault();
     e.stopPropagation();
     this.setState({
-        style: {background: '#F7ACCF', border: 'solid 3px black'}
+        style: {background: '#F7ACCF',
+                marginTop: '30px'}
     });
   }
 
   onDragLeave(e) {
     e.preventDefault();
     this.setState({
-        style: {background: '', border: 'dashed'}
+        style: {background: ''}
     });
   }
 
@@ -102,20 +116,16 @@ class DropZonePlace extends React.Component{
             disableClick
             onDrop={this.onDrop}
             disabled={this.state.disabled}
+            onDragOver={this.onDragOver}
+            onDragLeave={this.onDragLeave}
             >
-            <div
-              onDragOver={this.onDragOver}
-              onDragLeave={this.onDragLeave}
-              className='dropZoneContainer'
-            >
-              <div id="upload-file-container" style={this.state.style}>{uploaderStatus}
+              <div style={this.state.style}>{uploaderStatus}
   							<input type='file' name='file-upload' accept='.csv' onChange={this.uploadCSVFile} />
                 <div className='upload_message'>
                   <br/><p>{message}</p>
                 </div>
                 <input type='submit' onClick={this.postCSVFile} />
               </div>
-            </div>
           </Dropzone>
       </div>
       );
