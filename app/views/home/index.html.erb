@@ -1,8 +1,9 @@
-<button>
+<%= react_component("HomeMessage", className: 'home-message', props: {text: 'Upload Confidently'}, prerender: true) %>
+
+
+<button style="background:none;border:none">
   <%= link_to 'Sign Up', new_user_path %>
 </button>
-<button>
+<button style="background:none;border:none">
   <%= link_to 'Sign In', login_path %>
 </button>
-
-<%= react_component("HomeMessage", props: {text: 'Hey you did it! Your first react component!'}, prerender: false) %>
