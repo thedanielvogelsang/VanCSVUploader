@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import _ from 'lodash';
 import Dropzone from 'react-dropzone'
@@ -20,7 +21,6 @@ class DropZonePlace extends React.Component{
     this.dragAndDrop = this.dragAndDrop.bind(this);
     this.onDragOver = this.onDragOver.bind(this);
     this.onDragLeave = this.onDragLeave.bind(this);
-    this.setOriginalText = this.setOriginalText.bind(this);
     this.onDrop = this.onDrop.bind(this);
 	}
 
@@ -40,22 +40,20 @@ class DropZonePlace extends React.Component{
     this.setState({
       body: acceptedFiles[0],
       statusMsg: "",
-      style: {background: '#F7ACCF',
-                marginTop: '30px'},
     })
     if(!acceptedFiles[0]){
       this.setState({
+        style: {background: '#e51616',
+                  marginTop: '30px'},
         message: "File must be a CSV, try again with the correct file format"
       })
     }else {
       this.setState({
+        style: {background: '#F7ACCF',
+                  marginTop: '30px'},
         message: "CSV uploaded. Click 'Submit' to launch vanCSV_Uploader"
       })
     }
-  }
-
-  setOriginalText(){
-    this.setState({status: 'idle', statusMsg: (<p>Click or drop files here to upload...</p>)});
   }
 
   uploadCSVFile(e) {
@@ -72,15 +70,22 @@ class DropZonePlace extends React.Component{
 
   postCSVFile(e) {
     e.preventDefault();
-    fetch('/vanCSV_uploader', {
-      method: 'post',
-      body: this.state.body
-    }).then( () => {
-      console.log('posted the file to controller')
+    if(this.state.body){
+      fetch('/vanCSV_uploader', {
+        method: 'post',
+        body: this.state.body
+      }).then( () => {
+        console.log('posted the file to controller')
+        ReactDOM.findDOMNode(this.refs.uploadBtn).style = 'display:none'
+        this.setState({
+          message: 'Successful Post!'
+        })
+      });
+    }else{
       this.setState({
-
+        message: 'Error. No CSV attached'
       })
-    });
+    }
   }
 
   onDragOver(e) {
@@ -119,7 +124,7 @@ class DropZonePlace extends React.Component{
             onDragLeave={this.onDragLeave}
             >
               <div style={this.state.style}>{uploaderStatus}
-  							<input type='file' name='file-upload' accept='.csv' onChange={this.uploadCSVFile} />
+  							<input ref='uploadBtn' type='file' name='file-upload' accept='.csv' onChange={this.uploadCSVFile} />
                 <div className='upload_message'>
                   <br/><p>{message}</p>
                 </div>
