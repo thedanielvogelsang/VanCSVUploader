@@ -1,10 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash';
-
-// var style = {
-//   background: 'red'
-// };
+import Dropzone from 'react-dropzone'
 
 class DropZonePlace extends React.Component{
 
@@ -25,41 +22,27 @@ class DropZonePlace extends React.Component{
     this.onDragOver = this.onDragOver.bind(this);
     this.onDragLeave = this.onDragLeave.bind(this);
     this.setOriginalText = this.setOriginalText.bind(this);
-
+    this.onDrop = this.onDrop.bind(this);
 	}
 
 	dragAndDrop(e) {
     e.preventDefault();
-    if (!this.uploadFile) {
-    	return;
-    }
-    let data = new FormData();
-		data.append('recfile', this.uploadFile);
-		data.append('user', 'guestUser');
+    let file = e.currentTarget;
+    console.log(e)
+    this.setState({
+      body: file,
+      message: "CSV uploaded. Click 'Submit' to launch vanCSV_Uploader",
+      statusMsg: ""
+    })
+    console.log(this.state.message)
+  }
 
-		fetch('/api/uploads/upload/', {
-		  method: 'post',
-		  body: data
-			}).then((res) => {
-					this.setState({
-	        	status: 'uploading',
-            statusMsg: (<p>Uploading...</p>)
-	      	});
-					return res.json();
-			}).then((val) =>{
-					if(val.message == 'ok'){
-						this.setState({
-	        		status: 'done',
-              statusMsg: (<p id='checkMark'><i className="fa fa-check"></i></p>)
-	      		});
-            this.props.updateImages();
-            timer = _.delay( this.setOriginalText, 1000);
-					};
-		});
-    this.uploadFile = '';
-		this.setState({
-        imagePreviewUrl: ''
-    });
+  onDrop(acceptedFiles, rejectedFiles) {
+    this.setState({
+      body: acceptedFiles[0],
+      message: "CSV uploaded. Click 'Submit' to launch vanCSV_Uploader",
+      statusMsg: ""
+    })
   }
 
   setOriginalText(){
@@ -74,7 +57,6 @@ class DropZonePlace extends React.Component{
       message: "CSV uploaded. Click 'Submit' to launch vanCSV_Uploader",
       statusMsg: ""
     })
-    console.log(file)
   }
 
   postCSVFile(e) {
@@ -114,28 +96,33 @@ class DropZonePlace extends React.Component{
       // message = (<p className='upload_success'>message</p>)
     }
 		return (
-          <div
-            onDragOver={this.onDragOver}
-            onDragLeave={this.onDragLeave}
-            className='dropZoneContainer'
-          >
-						<div className='dropZone' id="upload-file-container" style={this.state.style}>{uploaderStatus}
-							<input type='file' name='file-upload' onChange={this.uploadCSVFile} />
-              <input type='submit' onClick={this.postCSVFile} />
-						</div>
-            <div className='upload_message'>
-            <br/><p>{message}</p>
+      <div>
+          <Dropzone
+            accept=".csv"
+            disableClick
+            onDrop={this.onDrop}
+            disabled={this.state.disabled}
+            >
+            <div
+              onDragOver={this.onDragOver}
+              onDragLeave={this.onDragLeave}
+              className='dropZoneContainer'
+            >
+              <div id="upload-file-container" style={this.state.style}>{uploaderStatus}
+  							<input type='file' name='file-upload' accept='.csv' onChange={this.uploadCSVFile} />
+                <div className='upload_message'>
+                  <br/><p>{message}</p>
+                </div>
+                <input type='submit' onClick={this.postCSVFile} />
+              </div>
             </div>
-        		<a href="" onClick={this.dragAndDrop} className="icon-button cloudicon">
-              <span><i className="fa fa-cloud-upload"></i></span>
-            </a>
-          </div>
+          </Dropzone>
+      </div>
       );
 	}
 }
 
 DropZonePlace.propTypes = {
-
   onDragOver: PropTypes.func,
   onDragLeave: PropTypes.func,
 };
