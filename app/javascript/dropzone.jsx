@@ -9,7 +9,6 @@ class DropZonePlace extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-      imagePreviewUrl: '',
       status: 'idle',
       message: '',
       statusMsg: (<p>Click or drop files here to upload...</p>),
@@ -49,8 +48,8 @@ class DropZonePlace extends React.Component{
         message: "File must be a CSV, try again with the correct file format"
       })
     }else {
-      ReactDOM.findDOMNode(this.refs.submitBtn).placeholder = 'Submit another CSV'
       ReactDOM.findDOMNode(this.refs.uploadBtn).style = 'display:none'
+      ReactDOM.findDOMNode(this.refs.submitBtn2).style = 'visibility:visible'
       this.setState({
         style: {background: '#F7ACCF',
                   marginTop: '30px'},
@@ -108,13 +107,8 @@ class DropZonePlace extends React.Component{
 
 
 	render(){
-		let {imagePreviewUrl} = this.state;
     let uploaderStatus = this.state.statusMsg;
     let message = this.state.message;
-    if (imagePreviewUrl) {
-      uploaderStatus = (<img src={imagePreviewUrl} className='dropPreview'/>);
-      // message = (<p className='upload_success'>message</p>)
-    }
 		return (
       <div>
           <Dropzone
@@ -131,6 +125,7 @@ class DropZonePlace extends React.Component{
                   <br/><p>{message}</p>
                 </div>
                 <input type='submit' onClick={this.postCSVFile} ref='submitBtn'/>
+                <input type='submit' onClick={this.postCSVFile} ref='submitBtn2' value='Add Another CSV' style={{visibility: 'hidden'}}/>
               </div>
           </Dropzone>
       </div>
