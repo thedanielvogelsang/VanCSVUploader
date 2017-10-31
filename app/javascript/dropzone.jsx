@@ -15,7 +15,6 @@ class DropZonePlace extends React.Component{
       style: {marginTop: '30px'},
       body: {}
     };
-    this.uploadFile = '';
     this.uploadCSVFile = this.uploadCSVFile.bind(this);
     this.postCSVFile = this.postCSVFile.bind(this);
     this.dragAndDrop = this.dragAndDrop.bind(this);
