@@ -42,12 +42,15 @@ class DropZonePlace extends React.Component{
       statusMsg: "",
     })
     if(!acceptedFiles[0]){
+      // ReactDOM.findDOMNode(this.refs.submitBtn).style = 'placeholder:Submit Another'
       this.setState({
         style: {background: '#e51616',
                   marginTop: '30px'},
         message: "File must be a CSV, try again with the correct file format"
       })
     }else {
+      ReactDOM.findDOMNode(this.refs.submitBtn).placeholder = 'Submit another CSV'
+      ReactDOM.findDOMNode(this.refs.uploadBtn).style = 'display:none'
       this.setState({
         style: {background: '#F7ACCF',
                   marginTop: '30px'},
@@ -76,7 +79,6 @@ class DropZonePlace extends React.Component{
         body: this.state.body
       }).then( () => {
         console.log('posted the file to controller')
-        ReactDOM.findDOMNode(this.refs.uploadBtn).style = 'display:none'
         this.setState({
           message: 'Successful Post!'
         })
@@ -128,7 +130,7 @@ class DropZonePlace extends React.Component{
                 <div className='upload_message'>
                   <br/><p>{message}</p>
                 </div>
-                <input type='submit' onClick={this.postCSVFile} />
+                <input type='submit' onClick={this.postCSVFile} ref='submitBtn'/>
               </div>
           </Dropzone>
       </div>
