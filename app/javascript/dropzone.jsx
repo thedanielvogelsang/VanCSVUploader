@@ -18,43 +18,43 @@ class DropZonePlace extends React.Component{
     };
     this.uploadCSVFile = this.uploadCSVFile.bind(this);
     this.postCSVFile = this.postCSVFile.bind(this);
-    this.dragAndDrop = this.dragAndDrop.bind(this);
     this.onDragOver = this.onDragOver.bind(this);
     this.onDragLeave = this.onDragLeave.bind(this);
     this.onDrop = this.onDrop.bind(this);
     this.timeOut = this.timeOut.bind(this);
+		this.restartReact = this.restartReact.bind(this);
 	}
 
-	dragAndDrop(e) {
-    e.preventDefault();
-    let file = e.currentTarget;
-    console.log(e)
-    this.setState({
-      body: file,
-      message: "CSV uploaded. Click 'Submit' to launch vanCSV_Uploader",
-      statusMsg: ""
-    })
-    console.log(this.state.message)
-  }
+	restartReact(){
+		ReactDOM.findDOMNode(this.refs.submitBtn).style = 'visibility:visible'
+		ReactDOM.findDOMNode(this.refs.uploadBtn).style = 'visibility:visible'
+		ReactDOM.findDOMNode(this.refs.restartBtn).style = 'visibility:hidden'
+		this.setState({
+			status: 'idle',
+			message: '',
+			statusMsg: (<p>Click or drop files here to upload...</p>),
+			style: {marginTop: '30px'},
+			body: {}
+		})
+	}
 
   onDrop(acceptedFiles, rejectedFiles) {
     this.setState({
-      body: acceptedFiles[0],
+      body: this.state.body.concat([acceptedFiles[0]]),
       statusMsg: "",
     })
     if(!acceptedFiles[0]){
       // ReactDOM.findDOMNode(this.refs.submitBtn).style = 'placeholder:Submit Another'
       this.setState({
         style: {background: '#e51616',
-                  marginTop: '30px'},
+                marginTop: '30px'},
         message: "File must be a CSV, try again with the correct file format"
       })
     }else {
-      ReactDOM.findDOMNode(this.refs.uploadBtn).style = 'display:none'
-      ReactDOM.findDOMNode(this.refs.submitBtn2).style = 'visibility:visible'
+			console.log(this.state.body)
       this.setState({
         style: {background: '#F7ACCF',
-                  marginTop: '30px'},
+                marginTop: '30px'},
         message: "CSV uploaded. Click 'Submit' to launch vanCSV_Uploader"
       })
     }
@@ -70,9 +70,7 @@ class DropZonePlace extends React.Component{
       message: "CSV uploaded. Click 'Submit' to launch vanCSV_Uploader",
       statusMsg: ""
     })
-    ReactDOM.findDOMNode(this.refs.uploadBtn).style = 'display:none'
-    ReactDOM.findDOMNode(this.refs.submitBtn).value = 'Submit CSV to VAN'
-    ReactDOM.findDOMNode(this.refs.submitBtn2).style = 'visibility:visible'
+    ReactDOM.findDOMNode(this.refs.uploadBtn).style = 'visibility:hidden'
   }
 
   postCSVFile(e) {
@@ -82,7 +80,10 @@ class DropZonePlace extends React.Component{
         method: 'post',
         body: this.state.body
       }).then( () => {
+				ReactDOM.findDOMNode(this.refs.submitBtn).style = 'visibility:hidden'
+				ReactDOM.findDOMNode(this.refs.restartBtn).style = 'visibility:visible'
         this.setState({
+					style: {marginTop: '30px'},
           message: 'Successful Post!'
         })
       })
@@ -132,7 +133,7 @@ class DropZonePlace extends React.Component{
                   <br/><p>{message}</p>
                 </div>
                 <input type='submit' onClick={this.postCSVFile} ref='submitBtn'/>
-                <input type='submit' onClick={this.uploadCSVFile} ref='submitBtn2' value='Add Another CSV' style={{visibility: 'hidden'}}/>
+                <input value='Upload Another' type='submit' onClick={this.restartReact} ref='restartBtn' style={{visibility: 'hidden'}}/>
               </div>
           </Dropzone>
       </div>
