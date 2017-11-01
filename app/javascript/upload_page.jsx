@@ -9,6 +9,8 @@ export default class UploadPage extends React.Component {
   render(){
     return(
       <div className='upload-body'>
+      <div class='csv-headerbar'>
+      </div>
         <div className='upload-nav-div'>
           <Navbar />
         </div>

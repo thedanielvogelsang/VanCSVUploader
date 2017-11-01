@@ -7,16 +7,16 @@ body{
 }
 
 .formpage{
-  background-image: image-url('texture.jpg');
-  text-align: center;
-  margin-left: 200px;
+  background-image: image-url('');
 }
 
 #formpage-signup{
-  padding: 20px;  
+  padding: 20px;
+
 }
 #formpage-signin{
   padding: 20px;
+
 }
 
 .field{
@@ -27,12 +27,16 @@ body{
   margin-left: 200px;
   margin-bottom: 200px;
   margin-top: 130px;
+  // background-color: black;
+  // color: rgb(255, 248, 63);
 }
 
 .form-signup{
   margin-left: 200px;
   margin-bottom: 200px;
   margin-top: 130px;
+  // background-color: black;
+  // color: rgb(255, 248, 63);
 }
 
 .form-btn-signup{
@@ -45,23 +49,33 @@ body{
 .page-footerbar{
   width: 100%;
   height: 40px;
-  background: linear-gradient(to bottom right, rgba(255, 248, 63, 0), rgba(255, 248, 63, 1));
-  margin-top: 100px;
+  background: linear-gradient(to bottom, rgba(63, 219, 255, 0), rgba(63, 219, 255, 1));
+  // background: linear-gradient(to bottom right, rgba(255, 248, 63, 0), rgba(255, 248, 63, 1));
+  margin-top: 0px;
 }
 
 .page-headerbar{
   width: 100%;
   height: 40px;
-  background: linear-gradient(to top left, rgba(255, 248, 63, 0), rgba(255, 248, 63, 1));
+  background: linear-gradient(to top left, rgba(63, 219, 255, 0), rgba(63, 219, 255, 1));
   margin: 0;
 }
 
+.csv-headerbar{
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to top, rgba(63, 219, 255, 0), rgba(63, 219, 255, 1));
+  margin: 0;
+}
+
+
 .homepage-body{
-  background: white;
+  background-image: radial-gradient(ellipse farthest-corner at 45px 45px, rgba(63, 219, 255, 0.5) 0%, rgba(63, 219, 255, 0.1) );
   height: 1300px;
   margin-top: -20px;
   text-align: center;
   padding-bottom: 100px;
+  margin-bottom: -10px;
 }
 
 .header-div{
@@ -79,11 +93,12 @@ h1{
 }
 
 .subheader-div{
+  margin-top: 60px;
   background-color: white;
   padding: 5px;
-  padding-top: 100px;
+  padding-top: 80px;
   padding-bottom: 80px;
-  margin-bottom: 160px;
+  margin-bottom: 60px;
   // border-top: 2px solid black;
   // border-bottom: 2px solid black;
 }
@@ -121,12 +136,10 @@ button a{
   border-bottom-right-radius: 10px;
 }
 
-.homepage-container-1{
-
-}
+.homepage-container-1{}
 
 .button-div{
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 
 .upload_message {
@@ -188,6 +201,7 @@ button a{
   height: 1000px;
   margin-top: -20px;
   padding-top: 20px;
+  margin-bottom: -48px; 
   text-align: center;
 }
 
