@@ -6,13 +6,65 @@ body{
   margin: 0;
 }
 
+.formpage{
+  text-align: center;
+  margin-left: 200px;
+}
+
+#formpage-signup{
+  padding: 20px;
+}
+#formpage-signin{
+  padding: 20px;
+}
+
+.field{
+  display: inline-block;
+}
+
+.form-signin{
+  margin-left: 200px;
+}
+
+.form-signup{
+  margin-left: 200px;
+}
+
+.form-btn-signup{
+
+}
+.form-btn-signin{
+  display: inline-block;
+}
+
+.page-footerbar{
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom right, rgba(255, 248, 63, 0), rgba(255, 248, 63, 1));
+  margin-top: 100px;
+}
+
+.page-headerbar{
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to top left, rgba(255, 248, 63, 0), rgba(255, 248, 63, 1));
+  margin: 0;
+}
+
 .homepage-body{
-  background: linear-gradient(to bottom right, rgba(197, 209, 247, 0), rgba(197, 209, 247, 1));
+  background: white;
   height: 1300px;
   margin-top: -20px;
-  padding-top: 200px;
   text-align: center;
   padding-bottom: 100px;
+}
+
+.header-div{
+  color: white;
+  background: black;
+  height: 275px;
+  padding-top: 250px;
+  padding-bottom: 150px;
 }
 
 h1{
@@ -22,22 +74,26 @@ h1{
 }
 
 .subheader-div{
-  background: rgba(255, 255, 255, 1);
+  background-color: white;
   padding: 5px;
   padding-top: 100px;
   padding-bottom: 80px;
-  margin-top: 240px;
-  margin-bottom: 200px;
+  margin-bottom: 160px;
   // border-top: 2px solid black;
   // border-bottom: 2px solid black;
 }
 
 h2{
   font-family: 'Kaushan Script', cursive;
+  color: black;
+  .form-title {
+    margin-left: 50px;
+  }
 }
 
 h3{
   position: relative;
+  color: black;
   left: 32%;
   width: 36%;
   font-family: 'Proza Libre', sans-serif;
@@ -63,8 +119,13 @@ button a{
 .homepage-container-1{
 
 }
+
+.button-div{
+  margin-bottom: 200px;
+}
+
 .upload_message {
-  font-family: 'Times New Roman', serif;
+  font-family: 'Times New Roman', Times, serif;
   margin-bottom: 40px;
   font-size: 1em;
 }
@@ -140,10 +201,12 @@ button a{
 .list-right{
   list-style: none;
 }
+
 a {
   text-decoration: none;
   color: rgb(10, 123, 190);
 }
+
 ul{
 
 }
@@ -164,4 +227,8 @@ li{
   top: 200px;
   background-color: rgba(255, 255, 255, 0.4);
   padding: 50px;
+}
+
+h2.form-title{
+
 }
