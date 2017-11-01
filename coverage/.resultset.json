@@ -1,0 +1,230 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/helpers/home_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/helpers/sessions_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/jobs/csv_importer_job.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/jobs/application_job.rb": [
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/jobs/send_email_job.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/models/user.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/controllers/home_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/controllers/csv_loader_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        2,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/controllers/users_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/controllers/hello_world_controller.rb": [
+        null,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/models/csv_importer.rb": [
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/models/survey_converter.rb": [
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1509552227
+  }
+}

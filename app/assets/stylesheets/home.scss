@@ -7,12 +7,13 @@ body{
 }
 
 .formpage{
+  background-image: image-url('texture.jpg');
   text-align: center;
   margin-left: 200px;
 }
 
 #formpage-signup{
-  padding: 20px;
+  padding: 20px;  
 }
 #formpage-signin{
   padding: 20px;
@@ -24,10 +25,14 @@ body{
 
 .form-signin{
   margin-left: 200px;
+  margin-bottom: 200px;
+  margin-top: 130px;
 }
 
 .form-signup{
   margin-left: 200px;
+  margin-bottom: 200px;
+  margin-top: 130px;
 }
 
 .form-btn-signup{
