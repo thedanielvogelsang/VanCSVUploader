@@ -1,3 +1,167 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  padding: 0;
+  margin: 0;
+}
+
+.homepage-body{
+  background: linear-gradient(to bottom right, rgba(197, 209, 247, 0), rgba(197, 209, 247, 1));
+  height: 1300px;
+  margin-top: -20px;
+  padding-top: 200px;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+h1{
+  font-size: 5em;
+  font-weight: 900;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.subheader-div{
+  background: rgba(255, 255, 255, 1);
+  padding: 5px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  margin-top: 240px;
+  margin-bottom: 200px;
+  // border-top: 2px solid black;
+  // border-bottom: 2px solid black;
+}
+
+h2{
+  font-family: 'Kaushan Script', cursive;
+}
+
+h3{
+  position: relative;
+  left: 32%;
+  width: 36%;
+  font-family: 'Proza Libre', sans-serif;
+  z-index: 1;
+}
+
+button{
+  padding: 10px;
+  margin: 30px;
+  font-size: 1.6em;
+}
+button a{
+  font-size: 1.6em;
+  margin: 30px;
+  font-family: 'Cormorant Garamond', serif;
+  background: black;
+  color: white;
+  padding: 10px 30px 10px 30px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.homepage-container-1{
+
+}
+.upload_message {
+  font-family: 'Times New Roman', serif;
+  margin-bottom: 40px;
+  font-size: 1em;
+}
+
+.submitBtn{
+  margin-left: 40px;
+  display: inline-block;
+  background: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4em;
+  border: none;
+
+}
+
+.restartBtn{
+  font-family: 'Cormorant Garamond', serif;
+  margin-left: 27px;
+  display: block;
+  font-size: 1.4em;
+  background: none;
+  border:none;
+}
+
+.reloadBtn{
+  font-family: 'Cormorant Garamond', serif;
+  display: block;
+  font-size: 1.4em;
+  padding-left: 2px;
+  background: none;
+  border:none;
+  margin-left: -5px;
+}
+
+.csv-active{
+  background-color: rgb(243,247,243)
+}
+
+.sign-up{
+
+}
+
+.login{
+
+}
+
+.logout{
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.5em;
+}
+
+.upload-body{
+  background-image: image-url('fundesk.jpg');
+  background-size: 1270px 1000px;
+  background-repeat: no-repeat;
+  height: 1000px;
+  margin-top: -20px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.upload-nav-div{
+
+}
+.upload-dropzone-div{
+  align-content: center;
+  text-align: center;
+}
+
+.navbar{
+  text-align: right;
+}
+
+.list-right{
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: rgb(10, 123, 190);
+}
+ul{
+
+}
+li{
+ display: inline;
+ padding-right: 60px;
+}
+
+.homepage-link{
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.5em;
+
+}
+
+#dropzone{
+  position: fixed;
+  left: 37%;
+  top: 200px;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 50px;
+}

@@ -10,7 +10,7 @@ export default class Navbar extends React.Component {
       <nav className='navbar'>
         <ul className='list-right'>
           <li className='homepage-link'>
-          <a href='/'>vanCSV_Uploader</a>
+          <a href='/'>back to home</a>
           </li>
           <li className='logout'>
           <a href='/logout'>logout</a>

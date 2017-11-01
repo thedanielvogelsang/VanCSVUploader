@@ -8,11 +8,11 @@ export default class UploadPage extends React.Component {
   }
   render(){
     return(
-      <div>
-        <div>
+      <div className='upload-body'>
+        <div className='upload-nav-div'>
           <Navbar />
         </div>
-        <div>
+        <div className='upload-dropzone-div'>
           <DropZonePlace />
         </div>
       </div>
