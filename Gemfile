@@ -31,8 +31,9 @@ gem 'sidekiq'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'webpacker', '~> 3.0'
-gem 'figaro'
+gem "figaro", '~> 1.0.0'
 gem 'react_on_rails', '9.0.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
