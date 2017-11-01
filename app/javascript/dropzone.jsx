@@ -38,6 +38,18 @@ class DropZonePlace extends React.Component{
 		})
 	}
 
+	dragAndDrop(e) {
+    e.preventDefault();
+    let file = e.currentTarget;
+    console.log(e)
+    this.setState({
+      body: file,
+      message: "CSV uploaded. Click 'Submit' to launch vanCSV_Uploader",
+      statusMsg: ""
+    })
+    console.log(this.state.message)
+  }
+	
   onDrop(acceptedFiles, rejectedFiles) {
     this.setState({
       body: this.state.body.concat([acceptedFiles[0]]),
