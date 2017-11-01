@@ -132,7 +132,7 @@ class DropZonePlace extends React.Component{
                   <br/><p>{message}</p>
                 </div>
                 <input type='submit' onClick={this.postCSVFile} ref='submitBtn'/>
-                <input type='submit' onClick={this.postCSVFile} ref='submitBtn2' value='Add Another CSV' style={{visibility: 'hidden'}}/>
+                <input type='submit' onClick={this.uploadCSVFile} ref='submitBtn2' value='Add Another CSV' style={{visibility: 'hidden'}}/>
               </div>
           </Dropzone>
       </div>
