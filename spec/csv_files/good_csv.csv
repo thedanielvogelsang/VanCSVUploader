@@ -1,0 +1,6 @@
+id,firstname,lastname,email,phone,address,answer_1,answer_2,answer_3
+1,daniel,flannigan,daniel@gmail.com,316-207-6632,515 Spawns Lake Dr Derby KS 80212,yes,KnockingDoors,Spanish
+2,jack,sparrow,jack@gmail.com,016-200-3300,515 Spawns Lake Dr Derby MI 80212,yes,CallVoters,Vietnamese
+3,jane,fonda,jane@gmail.com,016-333-6332,515 Spawns Lake Dr Derby LA 80212,no,HostingEvents,
+4,lucius,malfoy,lucius@gmail.com,016-237-3333,515 Spawns Lake Dr Derby WY 80212,no,Support,German
+5,penelope,jones,penel_jones@gmail.com,016-237-3777,515 Spawns Lake Dr Derby CO 80212,no,UnsureYet,English

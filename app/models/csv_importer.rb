@@ -8,12 +8,19 @@ class CSVImporter
   end
 
   def run
+    survey_responses = []
     CSV.foreach(@file, headers: true, header_converters: :symbol) do |row|
-      SurveyConverter.post_to_van(player_profile_id: Player.find(row[:id]).profile.id,
-                                  game_id: row[:game_id],
-                                   points:  row[:points],
-                                    fouls:   row[:fouls])
+      survey_responses << SurveyConverter.convert(first_name: row[:firstName],
+                                    last_name: row[:lastName],
+                                    address: row[:address]
+                                    phone: row[:phone],
+                                    email: row[:email],
+                                    surveyQuestion1: row[:answer_1],
+                                    surveyQuestion2: row[:answer_2],
+                                    surveyQuestion3: row[:answer_3])
     end
+    # VanService.post_survey(survey_responses)
+    #change this over to end of Post
     send_summary_email
   end
 
