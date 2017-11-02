@@ -19,6 +19,7 @@ class CSVImporter
                                     surveyQuestion2: row[:answer_2],
                                     surveyQuestion3: row[:answer_3])
     end
+    VanService.post(survey_responses)
     # VanService.post_survey(survey_responses)
     #change this over to end of Post
     send_summary_email
