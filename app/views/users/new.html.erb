@@ -1,0 +1,18 @@
+<div class='formpage'>
+  <div class='page-headerbar'>
+  </div>
+  <div id='formpage-signup' className='formpage'>
+    <h2 className='form-title'>Signup!</h2>
+
+    <%= form_for :user, url: '/users', :html => {:class => 'form-signup'} do |f| %>
+
+    Username: <%= f.text_field :username %>
+    Password: <%= f.password_field :password %>
+    Password Confirmation: <%= f.password_field :password_confirmation %>
+    <%= f.submit "Sign Up!", :class => 'form-btn-signup' %>
+
+    <% end %>
+  </div>
+  <div class='page-footerbar'>
+  </div>
+</div>
