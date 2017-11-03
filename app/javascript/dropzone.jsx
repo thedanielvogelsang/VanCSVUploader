@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
-import Dropzone from '../../node_modules/react-dropzone'
-import ReactInterval from '../../node_modules/react-interval'
+import Dropzone from 'react-dropzone'
+import ReactInterval from 'react-interval'
 
 class DropZonePlace extends React.Component{
 
