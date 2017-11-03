@@ -1,5 +1,5 @@
 import React from 'react'
-import Dropzone from 'react-dropzone'
+import Dropzone from '../../node_modules/react-dropzone'
 
 export default class Accept extends React.Component {
   constructor() {
