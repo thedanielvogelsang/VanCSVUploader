@@ -18,6 +18,6 @@ module.exports = {
   },
   resolve: {
     // you can now require('file') instead of require('file.coffee')
-    extensions: ['', '.js', '.json', '.coffee']
+    extensions: ['.js', '.json', '.coffee']
   }
 };

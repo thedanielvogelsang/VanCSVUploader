@@ -5,7 +5,6 @@
   },
   "private": true,
   "scripts": {
-    "prestart": "init",
     "prestart": "react-dropzone",
     "prestart": "react-interval",
     "webpack:deploy": "webpack --config=config/webpack/production.js -p",
