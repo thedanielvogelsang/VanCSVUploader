@@ -6,8 +6,9 @@
   "private": true,
   "scripts": {
     "preinstall": "npm install",
-    "preinstall": "npm install redux@2.0.0",
+    "preinstall": "npm install redux@3.0.0",
     "preinstall": "npm install react-dropzone",
+    "preinstall": "npm update",
     "webpack:deploy": "webpack --config=config/webpack/production.js -p",
     "heroku-postbuild": "npm run webpack:deploy"
   },
