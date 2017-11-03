@@ -1,12 +1,12 @@
 {
-  "name": "Van_CSV_Uploader",
+  "name": "vancsv-uploader",
   "engines": {
     "node": "6.9.3"
   },
   "private": true,
   "scripts": {
     "webpack:deploy": "webpack --config=config/webpack/production.js -p",
-    "heroku-postbuild": "npm run webpack:deploy"
+    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress"
   },
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
@@ -19,5 +19,18 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^2.9.3"
-  }
+  },
+  "description": "This application was designed for a local senate campaign, intending to be a tool for the candidate's campaign to use for fast uploads to VAN VoteBuilder, an online database used by the Democratic Party across the United States. In our instance, my candidate was using her campaign website as a location for volunteer signups and campaign-related surveys. However, the website was built on Wordpress, and did not provide any easy way to transfer form data to her more-official campaign database: VAN. This app aims to bridge that gap, and required me to investigate several new technologies, including: XXXX XXXXX XXXXXX XXXXX",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedanielvogelsang/VanCSVUploader.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thedanielvogelsang/VanCSVUploader/issues"
+  },
+  "homepage": "https://github.com/thedanielvogelsang/VanCSVUploader#readme"
 }
