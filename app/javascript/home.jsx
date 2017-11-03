@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from 'button';
+import Button from 'button,jsx';
 
 export default class HomeMessage extends React.Component {
   constructor(props, _railsContext) {
@@ -26,7 +26,7 @@ export default class HomeMessage extends React.Component {
           <Button text='Sign In' path='login'/>
         </div>
        </div>
-    
+
       </div>
     );
   }

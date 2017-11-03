@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from 'navbar'
-import DropZonePlace from 'dropzone'
+import Navbar from 'navbar.jsx'
+import DropZonePlace from 'dropzone.jsx'
 
 export default class UploadPage extends React.Component {
   constructor(props, _railsContext){
