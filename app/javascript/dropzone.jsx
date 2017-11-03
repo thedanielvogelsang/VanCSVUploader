@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
-import Dropzone from '../../node_modules/react-dropzone'
+import Dropzone from 'react-dropzone'
 
 class DropZonePlace extends React.Component{
 
