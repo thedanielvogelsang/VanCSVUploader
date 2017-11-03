@@ -4,7 +4,7 @@ class CsvLoaderController < ApplicationController
 
   def show
     @user = current_user
-    if flash[:notice] == 57454
+    if session[:notice] == 57454
     flash[:notice] = "File Uploaded. A summary will be sent upon completion."
     end
   end
@@ -14,7 +14,7 @@ class CsvLoaderController < ApplicationController
     File.write(file_path_to_save_to, request.raw_post)
     CsvImporterJob.perform_later(file_path_to_save_to)
     redirect_to csv_loader_path
-    flash[:notice] = 57454
+    session[:notice] = 57454
   end
 
   def check_authorization
