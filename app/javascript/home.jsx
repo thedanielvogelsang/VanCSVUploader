@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from 'button,jsx';
+import Button from 'button.jsx';
 
 export default class HomeMessage extends React.Component {
   constructor(props, _railsContext) {
