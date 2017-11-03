@@ -10,7 +10,7 @@ export default class HomeMessage extends React.Component {
   render() {
     return (
       <div className='homepage-body'>
-      <div class='page-headerbar'>
+      <div className='page-headerbar'>
       </div>
        <div className='homepage-container-1'>
         <div className='header-div'>
@@ -26,8 +26,7 @@ export default class HomeMessage extends React.Component {
           <Button text='Sign In' path='login'/>
         </div>
        </div>
-       <div class='page-footerbar'>
-       </div>
+    
       </div>
     );
   }
