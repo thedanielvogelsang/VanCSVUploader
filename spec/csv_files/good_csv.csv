@@ -1,6 +1,7 @@
-id,firstname,lastname,email,phone,address,answer_1,answer_2,answer_3
-1,daniel,flannigan,daniel@gmail.com,316-207-6632,515 Spawns Lake Dr Derby KS 80212,yes,KnockingDoors,Spanish
-2,jack,sparrow,jack@gmail.com,016-200-3300,515 Spawns Lake Dr Derby MI 80212,yes,CallVoters,Vietnamese
-3,jane,fonda,jane@gmail.com,016-333-6332,515 Spawns Lake Dr Derby LA 80212,no,HostingEvents,
-4,lucius,malfoy,lucius@gmail.com,016-237-3333,515 Spawns Lake Dr Derby WY 80212,no,Support,German
-5,penelope,jones,penel_jones@gmail.com,016-237-3777,515 Spawns Lake Dr Derby CO 80212,no,UnsureYet,English
+"Entries ID","First Name","Last Name",Address,City,State,Zipcode,Email,Phone,"Volunteer Needs","Language Help","Campaign Updates?"
+8,Randall,Clarke,"1279 Address Lane",Menphis,"Colorado (CO)",88990,randy_dandy@gmail.com,1234566789,"Knocking Doors",,No
+9,Beatrice,Santiago,"908 Beautiful Ct.",Braxille,"Puerto Rico (PR)",12000000,bea@nononsense.net,7229001177,"Knocking Doors, Calls to Voters","Chinese, French, Korean, Tagalog",Yes
+10,Jane,Doe,"Street / Apt# (if applicable)","02903 Denver","Colorado (CO)",234,georg@afc.com,9120812590,"Knocking Doors",Chinese,Yes
+11,LastPerson,"Person Last","98 Last House Ave.",Scaryville,"Louisiana (LA)",80212,examples!@123.com,8903749481,"Knocking Doors, Calls to Voters, I\'m not sure but I want to do something!",,No
+12,Jane,Doe,"123 YourAverageLane St. #300",Denver,"Colorado (CO)",9090.,newest@updates.com,(123)-223-2222,"Knocking Doors",,Yes
+14,ALL,BALLZ,"EVERYTHING 123",Denver,"Hawaii (HI)",-1111,soandso@ballzdeep.com,1111111111,"Knocking Doors, Calls to Voters, Hosting Events, Support (Data entry, language translation, etc), I\'m not sure but I want to do something!","Spanish, Amharic, Chinese, French, Korean, Tagalog, Vietnamese",Yes

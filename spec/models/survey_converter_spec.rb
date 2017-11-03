@@ -3,6 +3,36 @@ require 'csv'
 
 RSpec.describe 'survey_converter', type: :model do
   context "can take a good CSV row by row" do
+    it "#returns the right format for VAN upload" do
+      correct_format = {
+            "canvassContext": {
+              "contactTypeId": 2,
+              "inputTypeId": 14,
+              "dateCanvassed": "2012-04-09T00:00:00-04:00"
+            },
+            "resultCodeId": 'null',
+            "responses": [ ]
+          }
+      file = 'spec/csv_files/good_single_line_form_data.csv'
+      survey_responses = []
+      CSV.foreach(file, headers: true,
+                        header_converters: :symbol) do |row|
+                          survey_responses <<  SurveyConverter.convert(first_name: row[:first_name],
+                                              last_name: row[:last_name],
+                                              addressLine1: row[:address],
+                                              city: row[:city],
+                                              stateOrProvince: row[:state],
+                                              zipOrPostalCode: row[:zipcode],
+                                              email: row[:email],
+                                              phoneNumber: row[:phone],
+                                              surveyQuestion1: row[:volunteer_needs],
+                                              surveyQuestion2: row[:language_help],
+                                              surveyQuestion3: row[:campaign_updates]
+                                            )
+      end
+      expect(survey_responses[0][:responses][:canvassContext][:contactTypeId]).to eq(15)
+      expect(survey_responses[0].keys).to eq([:firstName, :lastName,  :zipOrPostalCode, :phoneNumber, :address, :city, :stateOrProvince, :email, :responses])
+    end
     it "#returns name, address, phone and email
           for VAN lookup AND returns json ready for
             VAN service to post to VAN" do
@@ -10,51 +40,101 @@ RSpec.describe 'survey_converter', type: :model do
       survey_responses = []
       CSV.foreach(file, headers: true,
                         header_converters: :symbol) do |row|
-          survey_responses <<  SurveyConverter.convert(first_name: row[:firstname],
-                              last_name: row[:lastname],
-                              address: row[:address],
-                              phone: row[:phone],
-                              email: row[:email],
-                              surveyQuestion1: row[:answer_1],
-                              surveyQuestion2: row[:answer_2],
-                              surveyQuestion3: row[:answer_3]
-                            )
+                          survey_responses <<  SurveyConverter.convert(first_name: row[:first_name],
+                                              last_name: row[:last_name],
+                                              addressLine1: row[:address],
+                                              city: row[:city],
+                                              stateOrProvince: row[:state],
+                                              zipOrPostalCode: row[:zipcode],
+                                              email: row[:email],
+                                              phoneNumber: row[:phone],
+                                              surveyQuestion1: row[:volunteer_needs],
+                                              surveyQuestion2: row[:language_help],
+                                              surveyQuestion3: row[:campaign_updates]
+                                            )
       end
-      expect(survey_responses[0][:first]).to eq('daniel')
+      expect(survey_responses[0][:firstName]).to eq('Randall')
       expect(survey_responses[0][:responses].class).to eq(Hash)
-      expect(survey_responses[1][:first]).to eq('jack')
-      expect(survey_responses[1][:last]).to eq('sparrow')
-      expect(survey_responses[2][:phone]).to eq('016-333-6332')
-      expect(survey_responses[3][:email]).to eq('lucius@gmail.com')
-      expect(survey_responses[4][:address]).to eq('515 Spawns Lake Dr Derby CO 80212')
-      expect(survey_responses[4][:responses][:responses][0][:surveyResponseId]).to eq('N')
+      expect(survey_responses[1][:firstName]).to eq('Beatrice')
+      expect(survey_responses[1][:lastName]).to eq('Santiago')
+      #checks zip for three different types of errors: too long, too short, not an Int
+      expect(survey_responses[1][:zipOrPostalCode]).to eq(nil)
+      expect(survey_responses[2][:zipOrPostalCode]).to eq(nil)
+      expect(survey_responses[4][:zipOrPostalCode]).to eq(nil)
+      #checks both types of phone entries XXXXXXXXXX and (YYY)-YYY-YYYY
+      expect(survey_responses[1][:phoneNumber]).to eq('7229001177')
+      expect(survey_responses[2][:phoneNumber]).to eq('9120812590')
+
+      expect(survey_responses[2][:email]).to eq('georg@afc.com')
+      expect(survey_responses[3][:address][0]).to eq('98 Last House Ave.')
+      expect(survey_responses[4][:address][1]).to eq('300')
+
+      expect(survey_responses[3][:city]).to eq('Scaryville')
+      expect(survey_responses[3][:stateOrProvince]).to eq('LA')
+      expect(survey_responses[3][:zipOrPostalCode]).to eq(80212)
+      expect(survey_responses[3][:responses][:responses][0][:surveyResponseId]).to eq(1)
     end
     it "#returns within its hash an accurate list of survey_response ids" do
       file = 'spec/csv_files/good_csv.csv'
       survey_responses = []
       CSV.foreach(file, headers: true,
                         header_converters: :symbol) do |row|
-          survey_responses <<  SurveyConverter.convert(first_name: row[:firstname],
-                              last_name: row[:lastname],
-                              address: row[:address],
-                              phone: row[:phone],
-                              email: row[:email],
-                              surveyQuestion1: row[:answer_1],
-                              surveyQuestion2: row[:answer_2],
-                              surveyQuestion3: row[:answer_3]
-                            )
+                          survey_responses <<  SurveyConverter.convert(first_name: row[:first_name],
+                                              last_name: row[:last_name],
+                                              addressLine1: row[:address],
+                                              city: row[:city],
+                                              stateOrProvince: row[:state],
+                                              zipOrPostalCode: row[:zipcode],
+                                              email: row[:email],
+                                              phoneNumber: row[:phone],
+                                              surveyQuestion1: row[:volunteer_needs],
+                                              surveyQuestion2: row[:language_help],
+                                              surveyQuestion3: row[:campaign_updates]
+                                            )
       end
-      dans_answers = survey_responses[0][:responses][:responses]
-      jacks_answers = survey_responses[1][:responses][:responses]
-      penelopes_answers = survey_responses[4][:responses][:responses]
-      p penelopes_answers
-      expect(penelopes_answers.count).to eq(3)
-      expect(penelopes_answers.first[:surveyQuestionId]).to eq(123)
-      expect(penelopes_answers.second[:surveyQuestionId]).to eq(234)
-      expect(penelopes_answers.third[:surveyQuestionId]).to eq(345)
-      expect(penelopes_answers.first[:surveyResponseId]).to eq('N')
-      expect(penelopes_answers.second[:surveyResponseId]).to eq(5)
-      expect(penelopes_answers.third[:surveyResponseId]).to eq('E')
+      randalls_answers = survey_responses[0][:responses][:responses]
+      # beas_answers = survey_responses[1][:responses][:responses]
+      # janes_answers = survey_responses[3][:responses][:responses]
+      # p janes_answers
+
+      #synched with first entry
+      # expect(janes_answers[0][:surveyQuestionId]).to eq(123)
+      # expect(beas_answers[0][:surveyQuestionId]).to eq(123)
+
+      #simple three
+      expect(randalls_answers[0][:surveyQuestionId]).to eq(123)
+      expect(randalls_answers[0][:surveyResponseId]).to eq(1)
+      expect(randalls_answers[1][:surveyQuestionId]).to eq(234)
+      expect(randalls_answers[1][:surveyResponseId]).to eq(nil)
+      expect(randalls_answers[2][:surveyQuestionId]).to eq(345)
+      expect(randalls_answers[2][:surveyResponseId]).to eq(0)
+      #beas multi-answers
+
+      # expect(beas_answers[1][:surveyQuestionId]).to eq(123)
+      # expect(beas_answers[2][:surveyQuestionId]).to eq(123)
+      # expect(beas_answers[3][:surveyQuestionId]).to eq(123)
+      # expect(beas_answers[4][:surveyQuestionId]).to eq(234)
+      # expect(beas_answers[5][:surveyQuestionId]).to eq(234)
+      # expect(beas_answers[6][:surveyQuestionId]).to eq(234)
+      # expect(beas_answers[7][:surveyQuestionId]).to eq(234)
+      # expect(beas_answers[7][:surveyResponseId]).to eq('T')
+      # expect(beas_answers[8][:surveyQuestionId]).to eq(345)
+      # expect(beas_answers[8][:surveyResponseId]).to eq(9)
+
+      #checking response ids
+
+      # expect(janes_answers[0][:surveyQuestionId]).to eq(123)
+      # expect(janes_answers[0][:surveyResponseId]).to eq(1)
+      # expect(janes_answers[1][:surveyQuestionId]).to eq(123)
+      # expect(janes_answers[1][:surveyResponseId]).to eq(1)
+      # expect(janes_answers[2][:surveyQuestionId]).to eq(123)
+      # expect(janes_answers[2][:surveyResponseId]).to eq(5)
+      # expect(janes_answers[3][:surveyQuestionId]).to eq(234)
+      # expect(janes_answers[3][:surveyResponseId]).to eq(nil)
+      # expect(janes_answers[4][:surveyResponseId]).to eq(345)
+      # expect(janes_answers[4][:surveyResponseId]).to eq(0)
+
+
     end
   end
 end

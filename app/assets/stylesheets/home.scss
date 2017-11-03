@@ -149,22 +149,23 @@ button a{
 }
 
 .submitBtn{
-  margin-left: 40px;
+  margin-left:50px;
   display: inline-block;
-  background: none;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.4em;
-  border: none;
-
+  border:none;
+  margin-bottom: 3px;
+  background:rgba(255,255,255,0.7);
+  border-radius: 3px;
 }
 
 .restartBtn{
   font-family: 'Cormorant Garamond', serif;
-  margin-left: 27px;
+  margin-left: 8px;
   display: block;
   font-size: 1.4em;
-  background: none;
-  border:none;
+  background:rgba(255,255,255,0.7);
+  border-radius: 3px;
 }
 
 .reloadBtn{
@@ -172,9 +173,10 @@ button a{
   display: block;
   font-size: 1.4em;
   padding-left: 2px;
-  background: none;
   border:none;
-  margin-left: -5px;
+  margin-left: 0px;
+  background:rgba(255,255,255,0.7);
+  border-radius: 3px;
 }
 
 .csv-active{
@@ -201,7 +203,7 @@ button a{
   height: 1000px;
   margin-top: -20px;
   padding-top: 20px;
-  margin-bottom: -48px; 
+  margin-bottom: -48px;
   text-align: center;
 }
 

@@ -10,14 +10,18 @@ class CSVImporter
   def run
     survey_responses = []
     CSV.foreach(@file, headers: true, header_converters: :symbol) do |row|
-      survey_responses << SurveyConverter.convert(first_name: row[:firstName],
-                                    last_name: row[:lastName],
-                                    address: row[:address]
-                                    phone: row[:phone],
-                                    email: row[:email],
-                                    surveyQuestion1: row[:answer_1],
-                                    surveyQuestion2: row[:answer_2],
-                                    surveyQuestion3: row[:answer_3])
+      survey_responses <<  SurveyConverter.convert(first_name: row[:first_name],
+                          last_name: row[:last_name],
+                          addressLine1: row[:address],
+                          city: row[:city],
+                          stateOrProvince: row[:state],
+                          zipOrPostalCode: row[:zipcode],
+                          email: row[:email],
+                          phoneNumber: row[:phone],
+                          surveyQuestion1: row[:volunteer_needs],
+                          surveyQuestion2: row[:language_help],
+                          surveyQuestion3: row[:campaign_updates]
+                        )
     end
     VanService.post(survey_responses)
     # VanService.post_survey(survey_responses)
