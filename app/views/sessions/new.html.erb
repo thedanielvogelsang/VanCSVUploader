@@ -11,11 +11,11 @@
         <%= f.text_field :username %>
       </div>
 
-      <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-        <%= f.submit "Sign In!", :class => 'form-btn-signin' %>
+      <div class="field" id='password'>
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
       </div>
+      <%= f.submit "Sign In!", :class => 'form-btn-signin', :id=> 'signin-btn'%>
     <% end %>
 
   </div>
