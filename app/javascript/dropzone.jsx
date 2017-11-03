@@ -21,7 +21,6 @@ class DropZonePlace extends React.Component{
     this.onDragOver = this.onDragOver.bind(this);
     this.onDragLeave = this.onDragLeave.bind(this);
     this.onDrop = this.onDrop.bind(this);
-    this.timeOut = this.timeOut.bind(this);
 		this.restartReact = this.restartReact.bind(this);
 	}
 
@@ -47,21 +46,24 @@ class DropZonePlace extends React.Component{
       statusMsg: "",
     })
     if(!acceptedFiles[0]){
-      // ReactDOM.findDOMNode(this.refs.submitBtn).style = 'placeholder:Submit Another'
+			ReactDOM.findDOMNode(this.refs.fileSelector).style = 'display:none'
+			ReactDOM.findDOMNode(this.refs.submitBtn).style = 'display:none'
+			ReactDOM.findDOMNode(this.refs.reloadBtn).style = 'display:block'
       this.setState({
-        style: {background: 'rgb(243,247,243)',
-								marginTop: '30px'},
+        style: {background: '#ef3b53',
+								marginTop: '0px', padding:'12px', border:'2px solid black', paddingBottom: '30px'},
         message: "File must be a CSV, try again with the correct file format"
       })
     }else {
-      this.setState({
-        style: {background: '#F7ACCF',
-                marginTop: '30px'},
-        message: "CSV uploaded! Click 'Submit' to launch vanCSV_Uploader"
-      })
 			ReactDOM.findDOMNode(this.refs.fileSelector).style = 'display:none'
 			ReactDOM.findDOMNode(this.refs.submitBtn).style = 'display:block'
 			ReactDOM.findDOMNode(this.refs.reloadBtn).style = 'display:block'
+      this.setState({
+        style: {background: '#96bc9f',
+								marginTop: '0px', padding:'12px', border:'2px solid black'},
+        message: "CSV uploaded! Click 'Submit' to launch vanCSV_Uploader"
+      })
+
     }
   }
 
@@ -69,8 +71,7 @@ class DropZonePlace extends React.Component{
     e.preventDefault();
     let file = e.target.files[0];
     this.setState({
-      style: {background: 'rgb(243,247,243)',
-							padding: '12px'},
+      style: {background: '#f9f32e', marginTop: '0px', padding:'12px', border:'2px solid black'},
       body: file,
       message: "CSV uploaded! Click 'Submit' to launch vanCSV_Uploader.",
       statusMsg: ""
@@ -92,7 +93,7 @@ class DropZonePlace extends React.Component{
 				ReactDOM.findDOMNode(this.refs.reloadBtn).style = 'display:none'
 				ReactDOM.findDOMNode(this.refs.success).style = 'font-size:1.5em'
         this.setState({
-					style: {marginTop: '30px'},
+					style: {background:'#4fccf2', marginTop: '20px', padding:'12px', border:'2px solid black', paddingTop:'20px', paddingBottom:'30px'},
           message: 'Successful Post!',
 					body: []
         })
@@ -109,7 +110,8 @@ class DropZonePlace extends React.Component{
     e.stopPropagation();
     this.setState({
         style: {background: '#F7ACCF',
-                marginTop: '30px'}
+                marginTop: '30px',
+								display:'none'}
     });
   }
 
@@ -120,15 +122,11 @@ class DropZonePlace extends React.Component{
     });
   }
 
-  timeOut() {
-    this.setTimeout(console.log('hello'), 6000)
-  }
-
 	render(){
     let uploaderStatus = this.state.statusMsg;
     let message = this.state.message;
 		return (
-      <div className='dropzone-div'>
+      <div className='dropzone-div' >
           <Dropzone
 						id="dropzone"
             accept=".csv"
