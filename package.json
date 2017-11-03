@@ -5,9 +5,9 @@
   },
   "private": true,
   "scripts": {
-    "prestart": "npm init",
-    "prestart": "npm install react-dropzone",
-    "prestart": "npm install react-interval",
+    "preinstall": "npm install",
+    "preinstall": "npm install redux@2.0.0",
+    "preinstall": "npm install react-dropzone",
     "webpack:deploy": "webpack --config=config/webpack/production.js -p",
     "heroku-postbuild": "npm run webpack:deploy"
   },
