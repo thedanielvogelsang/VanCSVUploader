@@ -1,5 +1,6 @@
 {
   "name": "Van_CSV_Uploader",
+  "version": "6.9.3",
   "private": true,
   "scripts": {
     "webpack:deploy": "webpack --config=config/webpack/production.js -p",
