@@ -26,8 +26,7 @@ export default class HomeMessage extends React.Component {
           <Button text='Sign In' path='login'/>
         </div>
        </div>
-       <div class='page-footerbar'>
-       </div>
+    
       </div>
     );
   }
