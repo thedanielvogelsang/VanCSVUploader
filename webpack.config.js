@@ -1,19 +1,23 @@
+// webpack.config.js
 module.exports = {
-  entry: './index.jsx',
+  entry: './main.js',
   output: {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['es2015', 'react']
+    loaders: [
+      { test: /\.coffee$/, loader: 'coffee-loader' },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015', 'react']
+        }
       }
-    }]
+    ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    // you can now require('file') instead of require('file.coffee')
+    extensions: ['', '.js', '.json', '.coffee']
   }
 };
