@@ -22,5 +22,4 @@
 /config/application.yml
 /public/packs
 /public/packs-test
-/node_modules
 /spec
