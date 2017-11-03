@@ -1,6 +1,10 @@
 {
   "name": "Van_CSV_Uploader",
   "private": true,
+  "scripts": {
+    "webpack:deploy": "webpack --config=webpack/webpack.config.js -p",
+    "heroku-postbuild": "npm run webpack:deploy"
+  },
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
     "babel-preset-react": "^6.24.1",
@@ -12,9 +16,5 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^2.9.3"
-  },
-  "scripts": {
-  "webpack:deploy": "webpack --config=webpack/webpack.config.js -p",
-  "heroku-postbuild": "npm run webpack:deploy"
-  },
+  }
 }
