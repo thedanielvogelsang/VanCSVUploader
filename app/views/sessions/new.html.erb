@@ -3,10 +3,10 @@
   </div>
   <div id='formpage-signin'>
 
-    <h2 className='form-title'>Log in</h2>
+    <h2 id='login-icon' className='form-title'>Log in</h2>
 
     <%= form_for :session, url: login_path, :html => {:class => 'form-signin'} do |f| %>
-      <div class="field">
+      <div class="field" id='username'>
         <%= f.label :username %><br />
         <%= f.text_field :username %>
       </div>
