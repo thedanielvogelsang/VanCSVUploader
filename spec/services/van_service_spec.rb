@@ -3,20 +3,7 @@ require 'csv'
 
 RSpec.describe VanService do
   before(:each) do
-    @responses = []
-    file = 'spec/csv_files/good_csv.csv'
-    CSV.foreach(file, headers: true, header_converters: :symbol) do |row|
-      @responses <<  SurveyConverter.convert(first_name: row[:firstname],
-                          last_name: row[:lastname],
-                          address: row[:address],
-                          phone: row[:phone],
-                          email: row[:email],
-                          surveyQuestion1: row[:answer_1],
-                          surveyQuestion2: row[:answer_2],
-                          surveyQuestion3: row[:answer_3]
-                        )
     @service = VanService.new
-    end
   end
   it 'can connect with VAN upon initialization' do
     expect(@service).to be_truthy
