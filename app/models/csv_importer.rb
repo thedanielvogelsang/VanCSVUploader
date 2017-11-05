@@ -23,7 +23,7 @@ class CSVImporter
                           surveyQuestion3: row[:campaign_updates]
                         )
     end
-    VanService.post(survey_responses)
+    VanService.new.find_or_create_all_and_post(survey_responses)
     # VanService.post_survey(survey_responses)
     #change this over to end of Post
     send_summary_email

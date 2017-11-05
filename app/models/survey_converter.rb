@@ -73,7 +73,7 @@ class SurveyConverter
     if !entry.nil?
       responses = entry.split(',')
       responses.each do |answer|
-        @json_hash[:responses] << survey_parser(num, answer)
+        @json_hash[:responses] << survey_parser(num, answer) unless nil
       end
     else
       @json_hash[:responses] << survey_parser(num, entry)
@@ -89,7 +89,7 @@ class SurveyConverter
       }
     unless entry == nil
         hash[:surveyResponseId] = 1 unless entry.scan(/Knocking Doors/).empty?
-        hash[:surveyResponseId] = 2 unless entry.scan(/Call to Voters/).empty?
+        hash[:surveyResponseId] = 2 unless entry.scan(/Calls to Voters/).empty?
         hash[:surveyResponseId] = 3 unless entry.scan(/Hosting Events/).empty?
         hash[:surveyResponseId] = 4 unless entry.scan(/Support/).empty?
         hash[:surveyResponseId] = 5 unless entry.scan(/m not sure but I want to do something!/).empty?

@@ -93,13 +93,13 @@ RSpec.describe 'survey_converter', type: :model do
                                             )
       end
       randalls_answers = survey_responses[0][:responses][:responses]
-      # beas_answers = survey_responses[1][:responses][:responses]
-      # janes_answers = survey_responses[3][:responses][:responses]
+      beas_answers = survey_responses[1][:responses][:responses]
+      janes_answers = survey_responses[3][:responses][:responses]
       # p janes_answers
 
       #synched with first entry
-      # expect(janes_answers[0][:surveyQuestionId]).to eq(123)
-      # expect(beas_answers[0][:surveyQuestionId]).to eq(123)
+      expect(janes_answers[0][:surveyQuestionId]).to eq(123)
+      expect(beas_answers[0][:surveyQuestionId]).to eq(123)
 
       #simple three
       expect(randalls_answers[0][:surveyQuestionId]).to eq(123)
@@ -110,29 +110,27 @@ RSpec.describe 'survey_converter', type: :model do
       expect(randalls_answers[2][:surveyResponseId]).to eq(0)
       #beas multi-answers
 
-      # expect(beas_answers[1][:surveyQuestionId]).to eq(123)
-      # expect(beas_answers[2][:surveyQuestionId]).to eq(123)
-      # expect(beas_answers[3][:surveyQuestionId]).to eq(123)
-      # expect(beas_answers[4][:surveyQuestionId]).to eq(234)
-      # expect(beas_answers[5][:surveyQuestionId]).to eq(234)
-      # expect(beas_answers[6][:surveyQuestionId]).to eq(234)
-      # expect(beas_answers[7][:surveyQuestionId]).to eq(234)
-      # expect(beas_answers[7][:surveyResponseId]).to eq('T')
-      # expect(beas_answers[8][:surveyQuestionId]).to eq(345)
-      # expect(beas_answers[8][:surveyResponseId]).to eq(9)
+      expect(beas_answers[0][:surveyQuestionId]).to eq(123)
+      expect(beas_answers[1][:surveyQuestionId]).to eq(123)
+      expect(beas_answers[2][:surveyQuestionId]).to eq(234)
+      expect(beas_answers[3][:surveyQuestionId]).to eq(234)
+      expect(beas_answers[4][:surveyQuestionId]).to eq(234)
+      expect(beas_answers[5][:surveyQuestionId]).to eq(234)
+      expect(beas_answers[5][:surveyResponseId]).to eq('T')
+      expect(beas_answers[6][:surveyQuestionId]).to eq(345)
+      expect(beas_answers[6][:surveyResponseId]).to eq(9)
 
       #checking response ids
-
-      # expect(janes_answers[0][:surveyQuestionId]).to eq(123)
-      # expect(janes_answers[0][:surveyResponseId]).to eq(1)
-      # expect(janes_answers[1][:surveyQuestionId]).to eq(123)
-      # expect(janes_answers[1][:surveyResponseId]).to eq(1)
-      # expect(janes_answers[2][:surveyQuestionId]).to eq(123)
-      # expect(janes_answers[2][:surveyResponseId]).to eq(5)
-      # expect(janes_answers[3][:surveyQuestionId]).to eq(234)
-      # expect(janes_answers[3][:surveyResponseId]).to eq(nil)
-      # expect(janes_answers[4][:surveyResponseId]).to eq(345)
-      # expect(janes_answers[4][:surveyResponseId]).to eq(0)
+      expect(janes_answers[0][:surveyQuestionId]).to eq(123)
+      expect(janes_answers[0][:surveyResponseId]).to eq(1)
+      expect(janes_answers[1][:surveyQuestionId]).to eq(123)
+      expect(janes_answers[1][:surveyResponseId]).to eq(2)
+      expect(janes_answers[2][:surveyQuestionId]).to eq(123)
+      expect(janes_answers[2][:surveyResponseId]).to eq(5)
+      expect(janes_answers[3][:surveyQuestionId]).to eq(234)
+      expect(janes_answers[3][:surveyResponseId]).to eq(nil)
+      expect(janes_answers[4][:surveyQuestionId]).to eq(345)
+      expect(janes_answers[4][:surveyResponseId]).to eq(0)
 
 
     end
