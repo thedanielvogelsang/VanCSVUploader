@@ -33,11 +33,11 @@ export default class HomeMessage extends React.Component {
         </div>
         <div className='subheader-div'>
           <h3 id='downArrow' ref='downArrow' style={{display:'block'}}><span>	&#9660; </span></h3>
-          <h3 id='upArrow' ref='upArrow' style={{display: 'none'}}><span>	&#9650; </span></h3>
           <br/>
           <h3>{this.props.sub1}</h3>
           <h2>{this.props.logo}</h2>
           <h3>{this.props.sub2}</h3>
+          <h3 id='upArrow' ref='upArrow' style={{display: 'none'}}><span>	&#9650; </span></h3>
         </div>
         <div className='button-div'>
           <Button text='Sign Up' path='sign-up'/>
