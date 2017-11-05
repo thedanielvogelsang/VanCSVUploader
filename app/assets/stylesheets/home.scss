@@ -121,7 +121,6 @@ span{
   height: 40px;
   background: linear-gradient(to bottom, rgba(63, 219, 255, 0), rgba(63, 219, 255, 1));
   // background: linear-gradient(to bottom right, rgba(255, 248, 63, 0), rgba(255, 248, 63, 1));
-  margin-top: 0px;
 }
 
 .page-headerbar{
@@ -141,9 +140,10 @@ span{
 
 .homepage-body{
   background-image: radial-gradient(ellipse farthest-corner at 45px 45px, rgba(63, 219, 255, 0.5) 0%, rgba(63, 219, 255, 0.1) );
-  min-height: 1250px;
+  height: 1200px;
   margin-top: -20px;
   text-align: center;
+  padding-bottom: 100px; 
 }
 
 .header-div{
@@ -207,10 +207,10 @@ button a{
   border-bottom-right-radius: 10px;
 }
 
-.homepage-container-1{}
+.homepage-container-1{
+}
 
 .button-div{
-  margin-bottom: 100px;
 }
 
 .upload_message {
