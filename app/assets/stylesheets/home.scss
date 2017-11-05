@@ -141,7 +141,7 @@ span{
 
 .homepage-body{
   background-image: radial-gradient(ellipse farthest-corner at 45px 45px, rgba(63, 219, 255, 0.5) 0%, rgba(63, 219, 255, 0.1) );
-  height: 1200px;
+  min-height: 1250px;
   margin-top: -20px;
   text-align: center;
 }
