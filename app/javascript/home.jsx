@@ -36,7 +36,7 @@ export default class HomeMessage extends React.Component {
         <div className='subheader-div'>
           <h3 id='downArrow' ref='downArrow' style={{display:'block'}}><span>	&#9660; </span></h3>
           <br/>
-          <br ref='extraSpace' style={{display:none}}/>
+          <br ref='extraSpace' style={{display:'none'}}/>
           <h3>{this.props.sub1}</h3>
           <h2>{this.props.logo}</h2>
           <h3>{this.props.sub2}</h3>
