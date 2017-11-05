@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 import Dropzone from 'react-dropzone'
-import ReactInterval from 'react-interval'
 
 class DropZonePlace extends React.Component{
 
