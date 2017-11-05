@@ -9,14 +9,16 @@ export default class HomeMessage extends React.Component {
   }
 
   componentDidMount() {
-    this.scrollListener;
+    window.addEventListener('scroll', this.scrollListener)
   }
 
   scrollListener() {
-    if (document.body.scrollTop > 1300 || document.documentElement.scrollTop > 1300) {
-      document.getElementById("upArrow").css = "display:block";
-    } else {
-      document.getElementById("downArrow").css = "display:none";
+    if (window.pageYOffset > 500) {
+      ReactDOM.findDOMNode(this.refs.upArrow).style = "display:block";
+      ReactDOM.findDOMNode(this.refs.downArrow).style = "display:none";
+    } else if(window.pageYOffset < 500) {
+      ReactDOM.findDOMNode(this.refs.downArrow).style = "display:block";
+      ReactDOM.findDOMNode(this.refs.upArrow).style = "display:none";
     }
   }
 
@@ -30,8 +32,8 @@ export default class HomeMessage extends React.Component {
           <h1>{this.props.header}</h1>
         </div>
         <div className='subheader-div'>
-          <h3 id='downArrow' style={{display:'block'}}><span>	&#9660; </span></h3>
-          <h3 id='upArrow' style={{display: 'none'}}><span>	&#9650; </span></h3>
+          <h3 id='downArrow' ref='downArrow' style={{display:'block'}}><span>	&#9660; </span></h3>
+          <h3 id='upArrow' ref='upArrow' style={{display: 'none'}}><span>	&#9650; </span></h3>
           <br/>
           <h3>{this.props.sub1}</h3>
           <h2>{this.props.logo}</h2>
