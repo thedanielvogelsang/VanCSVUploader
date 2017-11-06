@@ -81,27 +81,27 @@ class SurveyConverter
   end
 
   def survey_parser(num, entry)
-    survey_ids = [123, 234, 345]
+    survey_ids = [268212, 268218, 268221]
     hash = {
       "surveyQuestionId": survey_ids[num],
       "surveyResponseId": nil,
       "type": "SurveyResponse"
       }
     unless entry == nil
-        hash[:surveyResponseId] = 1 unless entry.scan(/Knocking Doors/).empty?
-        hash[:surveyResponseId] = 2 unless entry.scan(/Call to Voters/).empty?
-        hash[:surveyResponseId] = 3 unless entry.scan(/Hosting Events/).empty?
-        hash[:surveyResponseId] = 4 unless entry.scan(/Support/).empty?
-        hash[:surveyResponseId] = 5 unless entry.scan(/m not sure but I want to do something!/).empty?
-        hash[:surveyResponseId] = 9 if entry == 'Yes'
-        hash[:surveyResponseId] = 0 if entry == 'No'
-        hash[:surveyResponseId] = 'A' unless entry.scan(/Amharac/).empty?
-        hash[:surveyResponseId] = 'C' unless entry.scan(/Chinese/).empty?
-        hash[:surveyResponseId] = 'F' unless entry.scan(/French/).empty?
-        hash[:surveyResponseId] = 'K' unless entry.scan(/Korean/).empty?
-        hash[:surveyResponseId] = 'S' unless entry.scan(/Spanish/).empty?
-        hash[:surveyResponseId] = 'T' unless entry.scan(/Tagalog/).empty?
-        hash[:surveyResponseId] = 'V' unless entry.scan(/Vietnamese/).empty?
+        hash[:surveyResponseId] = 1118839 unless entry.scan(/Knocking Doors/).empty?
+        hash[:surveyResponseId] = 1118841 unless entry.scan(/Call to Voters/).empty?
+        hash[:surveyResponseId] = 1118842 unless entry.scan(/Hosting Events/).empty?
+        hash[:surveyResponseId] = 1118843 unless entry.scan(/Support/).empty?
+        hash[:surveyResponseId] = 1118844 unless entry.scan(/m not sure but I want to do something!/).empty?
+        hash[:surveyResponseId] = 1118884 if entry == 'Yes'
+        hash[:surveyResponseId] = 1118885 if entry == 'No'
+        hash[:surveyResponseId] = 1118873 unless entry.scan(/Amharac/).empty?
+        hash[:surveyResponseId] = 1118871 unless entry.scan(/Chinese/).empty?
+        hash[:surveyResponseId] = 1118866 unless entry.scan(/French/).empty?
+        hash[:surveyResponseId] = 1118878 unless entry.scan(/Korean/).empty?
+        hash[:surveyResponseId] = 1118864 unless entry.scan(/Spanish/).empty?
+        hash[:surveyResponseId] = 1118880 unless entry.scan(/Tagalog/).empty?
+        hash[:surveyResponseId] = 1118870 unless entry.scan(/Vietnamese/).empty?
         hash[:surveyResponseId] = nil if hash[:surveyResponseId].nil?
     end
     hash
