@@ -5,7 +5,10 @@ body{
   padding: 0;
   margin: 0;
 }
-
+span{
+  font-size: 2em;
+  color: rgba(63, 219, 255, 1);
+}
 .formpage{
   background-image: image-url('');
   font-size: 1.3em;
@@ -118,7 +121,6 @@ body{
   height: 40px;
   background: linear-gradient(to bottom, rgba(63, 219, 255, 0), rgba(63, 219, 255, 1));
   // background: linear-gradient(to bottom right, rgba(255, 248, 63, 0), rgba(255, 248, 63, 1));
-  margin-top: 0px;
 }
 
 .page-headerbar{
@@ -141,6 +143,7 @@ body{
   height: 1200px;
   margin-top: -20px;
   text-align: center;
+  padding-bottom: 100px; 
 }
 
 .header-div{
@@ -158,12 +161,12 @@ h1{
 }
 
 .subheader-div{
-  margin-top: 60px;
+  margin-top: 20px;
   background-color: white;
   padding: 5px;
-  padding-top: 80px;
+  padding-top: 20px;
   padding-bottom: 80px;
-  margin-bottom: 60px;
+  margin-bottom: 100px;
   // border-top: 2px solid black;
   // border-bottom: 2px solid black;
 }
@@ -182,6 +185,12 @@ h3{
   z-index: 1;
 }
 
+#downArrow, #upArrow{
+  margin-top: 0px;
+  font-size: 2em;
+  color: rgba(63, 219, 255, 0.6)
+}
+
 button{
   padding: 10px;
   margin: 30px;
@@ -198,10 +207,10 @@ button a{
   border-bottom-right-radius: 10px;
 }
 
-.homepage-container-1{}
+.homepage-container-1{
+}
 
 .button-div{
-  margin-bottom: 100px;
 }
 
 .upload_message {
