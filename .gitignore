@@ -14,7 +14,7 @@
 !/tmp/.keep
 /node_modules
 /yarn-error.log
-
+/spec/services
 .byebug_history
 
 # Ignore application configuration
