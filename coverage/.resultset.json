@@ -47,12 +47,19 @@
         1,
         null
       ],
-      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/models/user.rb": [
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/models/survey.rb": [
         1,
         1,
         null
       ],
       "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/models/user.rb": [
+        1,
+        1,
         1,
         1,
         null
@@ -213,6 +220,7 @@
         0,
         0,
         0,
+        0,
         null,
         null,
         1,
@@ -225,6 +233,7 @@
         null,
         1,
         2,
+        null,
         null,
         null
       ],
@@ -439,8 +448,14 @@
         0,
         null,
         0
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/models/user_surveys.rb": [
+        0,
+        0,
+        0,
+        0
       ]
     },
-    "timestamp": 1509976377
+    "timestamp": 1509980081
   }
 }

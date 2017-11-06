@@ -8,7 +8,6 @@ class CSVImporter
   end
 
   def run
-    send_summary_email
     survey_responses = []
     CSV.foreach(@file, headers: true, header_converters: :symbol) do |row|
       survey_responses <<  SurveyConverter.convert(first_name: row[:first_name],
@@ -24,13 +23,14 @@ class CSVImporter
                           surveyQuestion3: row[:campaign_updates]
                         )
     end
-    VanService.find_or_create_all_and_post(survey_responses)
+    upload_results = VanService.find_or_create_all_and_post(survey_responses)
+    send_summary_email(upload_results)
     # VanService.post_survey(survey_responses)
     # change this over to end of Post
   end
 
-  def send_summary_email
-    UserMailer.send_summary().deliver_now
+  def send_summary_email(upload_results)
+    UserMailer.send_summary(upload_results).deliver_now
   end
 
 end

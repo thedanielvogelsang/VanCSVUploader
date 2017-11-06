@@ -12,6 +12,7 @@ class CsvLoaderController < ApplicationController
 
   def create
     file_path_to_save_to = "./tmp/#{DateTime.now}_file.csv"
+    File.write(file_path_to_save_to, request.body.read)
     CsvImporterJob.perform_later(file_path_to_save_to)
     flash[:notice] = "File Uploaded. A summary will be sent upon completion."
   end
@@ -27,4 +28,5 @@ class CsvLoaderController < ApplicationController
   def current_user
     @user = User.find(session[:user_id]) if session[:user_id]
   end
+
 end
