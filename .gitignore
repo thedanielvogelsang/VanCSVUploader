@@ -21,4 +21,4 @@
 /config/application.yml
 /public/packs
 /public/packs-test
-/spec
+/spec/services

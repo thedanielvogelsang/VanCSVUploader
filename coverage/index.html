@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-06T07:54:41-07:00">2017-11-06T07:54:41-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-06T08:41:07-07:00">2017-11-06T08:41:07-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         8.03
+         8.37
        </span>
     </span> hits/line)
   </h2>
@@ -247,7 +247,7 @@
         <td>70</td>
         <td>70</td>
         <td>0</td>
-        <td>26.1</td>
+        <td>27.3</td>
       </tr>
       
       <tr>
@@ -390,7 +390,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         16.53
+         17.29
        </span>
     </span> hits/line)
   </h2>
@@ -452,7 +452,7 @@
         <td>70</td>
         <td>70</td>
         <td>0</td>
-        <td>26.1</td>
+        <td>27.3</td>
       </tr>
       
       <tr>
@@ -2366,14 +2366,14 @@
           <code class="ruby">  def initialize(incoming_csv)</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="4">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="4">
+          <span class="hits">13</span>
           
           <code class="ruby">    @json_hash = json_hash_structure</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="5">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="5">
+          <span class="hits">13</span>
           
           <code class="ruby">    @csv_hash = incoming_csv</code>
         </li>
@@ -2396,92 +2396,92 @@
           <code class="ruby">  def clean_for_post</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="9">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="9">
+          <span class="hits">13</span>
           
           <code class="ruby">    van_service_package = Hash.new</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="10">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="10">
+          <span class="hits">13</span>
           
           <code class="ruby">    van_service_package[:firstName] = @csv_hash[:first_name]</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="11">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="11">
+          <span class="hits">13</span>
           
           <code class="ruby">    van_service_package[:lastName] = @csv_hash[:last_name]</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="12">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="12">
+          <span class="hits">13</span>
           
           <code class="ruby">    van_service_package[:zipOrPostalCode] = clean_zipcode</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="13">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="13">
+          <span class="hits">13</span>
           
           <code class="ruby">    van_service_package[:phoneNumber] = clean_phone</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="14">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="14">
+          <span class="hits">13</span>
           
           <code class="ruby">    van_service_package[:address] = clean_address</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="15">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="15">
+          <span class="hits">13</span>
           
           <code class="ruby">    van_service_package[:city] = @csv_hash[:city]</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="16">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="16">
+          <span class="hits">13</span>
           
           <code class="ruby">    van_service_package[:stateOrProvince] = clean_state</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="17">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="17">
+          <span class="hits">13</span>
           
           <code class="ruby">    van_service_package[:email] = @csv_hash[:email]</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="18">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="18">
+          <span class="hits">13</span>
           
           <code class="ruby">    add_activist_code</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="19">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="19">
+          <span class="hits">13</span>
           
           <code class="ruby">    convert_me(0, @csv_hash[:surveyQuestion1])</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="20">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="20">
+          <span class="hits">13</span>
           
           <code class="ruby">    convert_me(1, @csv_hash[:surveyQuestion2])</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="21">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="21">
+          <span class="hits">13</span>
           
           <code class="ruby">    convert_me(2, @csv_hash[:surveyQuestion3])</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="22">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="22">
+          <span class="hits">13</span>
           
           <code class="ruby">    van_service_package[:responses] = @json_hash</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="23">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="23">
+          <span class="hits">13</span>
           
           <code class="ruby">    return van_service_package</code>
         </li>
@@ -2504,8 +2504,8 @@
           <code class="ruby">  def self.convert(csv_hash)</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="27">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="27">
+          <span class="hits">13</span>
           
           <code class="ruby">    new(csv_hash).clean_for_post</code>
         </li>
@@ -2528,20 +2528,20 @@
           <code class="ruby">  def clean_phone</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="31">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="31">
+          <span class="hits">13</span>
           
           <code class="ruby">    original = @csv_hash[:phoneNumber]</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="32">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="32">
+          <span class="hits">13</span>
           
           <code class="ruby">    convert_parenthetical(original) if original.length == 14 &amp;&amp; original[0] == &#39;(&#39;</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="33">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="33">
+          <span class="hits">13</span>
           
           <code class="ruby">    return original if original.length == 10</code>
         </li>
@@ -2600,20 +2600,20 @@
           <code class="ruby">  def clean_state</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="43">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="43">
+          <span class="hits">13</span>
           
           <code class="ruby">    abbr = []</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="44">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="44">
+          <span class="hits">13</span>
           
           <code class="ruby">    last_3 = @csv_hash[:stateOrProvince][-3..-1]</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="45">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="45">
+          <span class="hits">13</span>
           
           <code class="ruby">    last_3[0..1]</code>
         </li>
@@ -2636,14 +2636,14 @@
           <code class="ruby">  def clean_zipcode</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="49">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="49">
+          <span class="hits">13</span>
           
           <code class="ruby">    if @csv_hash[:zipOrPostalCode].scan(/\D/).empty? &amp;&amp; @csv_hash[:zipOrPostalCode].length == 5 || @csv_hash[:zipOrPostalCode].length == 6</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="50">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="50">
+          <span class="hits">5</span>
           
           <code class="ruby">      @csv_hash[:zipOrPostalCode].to_i</code>
         </li>
@@ -2684,8 +2684,8 @@
           <code class="ruby">  def clean_address</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="57">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="57">
+          <span class="hits">13</span>
           
           <code class="ruby">    address_parts = @csv_hash[:addressLine1].split(&#39;#&#39;)</code>
         </li>
@@ -2708,8 +2708,8 @@
           <code class="ruby">  def json_hash_structure</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="61">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="61">
+          <span class="hits">13</span>
           
           <code class="ruby">      canvass_response = {&quot;canvassContext&quot;:{</code>
         </li>
@@ -2756,8 +2756,8 @@
           <code class="ruby">      }</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="69">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="69">
+          <span class="hits">13</span>
           
           <code class="ruby">      canvass_response</code>
         </li>
@@ -2780,8 +2780,8 @@
           <code class="ruby">  def add_activist_code</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="73">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="73">
+          <span class="hits">13</span>
           
           <code class="ruby">    act_codes = {</code>
         </li>
@@ -2810,8 +2810,8 @@
           <code class="ruby">      }</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="78">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="78">
+          <span class="hits">13</span>
           
           <code class="ruby">    @json_hash[:responses] &lt;&lt; act_codes</code>
         </li>
@@ -2834,26 +2834,26 @@
           <code class="ruby">  def convert_me(num, entry)</code>
         </li>
       
-        <li class="covered" data-hits="36" data-linenumber="82">
-          <span class="hits">36</span>
+        <li class="covered" data-hits="39" data-linenumber="82">
+          <span class="hits">39</span>
           
           <code class="ruby">    if !entry.nil?</code>
         </li>
       
-        <li class="covered" data-hits="30" data-linenumber="83">
-          <span class="hits">30</span>
+        <li class="covered" data-hits="32" data-linenumber="83">
+          <span class="hits">32</span>
           
           <code class="ruby">      responses = entry.split(&#39;,&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="30" data-linenumber="84">
-          <span class="hits">30</span>
+        <li class="covered" data-hits="32" data-linenumber="84">
+          <span class="hits">32</span>
           
           <code class="ruby">      responses.each do |answer|</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="85">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="85">
+          <span class="hits">68</span>
           
           <code class="ruby">        @json_hash[:responses] &lt;&lt; survey_parser(num, answer) unless nil</code>
         </li>
@@ -2870,8 +2870,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="88">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="88">
+          <span class="hits">7</span>
           
           <code class="ruby">      @json_hash[:responses] &lt;&lt; survey_parser(num, entry)</code>
         </li>
@@ -2900,14 +2900,14 @@
           <code class="ruby">  def survey_parser(num, entry)</code>
         </li>
       
-        <li class="covered" data-hits="72" data-linenumber="93">
-          <span class="hits">72</span>
+        <li class="covered" data-hits="75" data-linenumber="93">
+          <span class="hits">75</span>
           
           <code class="ruby">    survey_ids = [268212, 268218, 268221]</code>
         </li>
       
-        <li class="covered" data-hits="72" data-linenumber="94">
-          <span class="hits">72</span>
+        <li class="covered" data-hits="75" data-linenumber="94">
+          <span class="hits">75</span>
           
           <code class="ruby">    hash = {</code>
         </li>
@@ -2936,98 +2936,98 @@
           <code class="ruby">      }</code>
         </li>
       
-        <li class="covered" data-hits="72" data-linenumber="99">
-          <span class="hits">72</span>
+        <li class="covered" data-hits="75" data-linenumber="99">
+          <span class="hits">75</span>
           
           <code class="ruby">    unless entry == nil</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="100">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="100">
+          <span class="hits">68</span>
           
           <code class="ruby">        hash[:surveyResponseId] = 1118839 unless entry.scan(/Knocking Doors/).empty?</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="101">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="101">
+          <span class="hits">68</span>
           
           <code class="ruby">        hash[:surveyResponseId] = 1118841 unless entry.scan(/Call to Voters/).empty?</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="102">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="102">
+          <span class="hits">68</span>
           
           <code class="ruby">        hash[:surveyResponseId] = 1118842 unless entry.scan(/Hosting Events/).empty?</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="103">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="103">
+          <span class="hits">68</span>
           
           <code class="ruby">        hash[:surveyResponseId] = 1118843 unless entry.scan(/Support/).empty?</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="104">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="104">
+          <span class="hits">68</span>
           
           <code class="ruby">        hash[:surveyResponseId] = 1118844 unless entry.scan(/m not sure but I want to do something!/).empty?</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="105">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="105">
+          <span class="hits">68</span>
           
           <code class="ruby">        hash[:surveyResponseId] = 1118884 if entry == &#39;Yes&#39;</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="106">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="106">
+          <span class="hits">68</span>
           
           <code class="ruby">        hash[:surveyResponseId] = 1118885 if entry == &#39;No&#39;</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="107">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="107">
+          <span class="hits">68</span>
           
           <code class="ruby">        hash[:surveyResponseId] = 1118873 unless entry.scan(/Amharac/).empty?</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="108">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="108">
+          <span class="hits">68</span>
           
           <code class="ruby">        hash[:surveyResponseId] = 1118871 unless entry.scan(/Chinese/).empty?</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="109">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="109">
+          <span class="hits">68</span>
           
           <code class="ruby">        hash[:surveyResponseId] = 1118866 unless entry.scan(/French/).empty?</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="110">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="110">
+          <span class="hits">68</span>
           
           <code class="ruby">        hash[:surveyResponseId] = 1118878 unless entry.scan(/Korean/).empty?</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="111">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="111">
+          <span class="hits">68</span>
           
           <code class="ruby">        hash[:surveyResponseId] = 1118864 unless entry.scan(/Spanish/).empty?</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="112">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="112">
+          <span class="hits">68</span>
           
           <code class="ruby">        hash[:surveyResponseId] = 1118880 unless entry.scan(/Tagalog/).empty?</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="113">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="113">
+          <span class="hits">68</span>
           
           <code class="ruby">        hash[:surveyResponseId] = 1118870 unless entry.scan(/Vietnamese/).empty?</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="114">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="68" data-linenumber="114">
+          <span class="hits">68</span>
           
           <code class="ruby">        hash[:surveyResponseId] = nil if hash[:surveyResponseId].nil?</code>
         </li>
@@ -3038,8 +3038,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="72" data-linenumber="116">
-          <span class="hits">72</span>
+        <li class="covered" data-hits="75" data-linenumber="116">
+          <span class="hits">75</span>
           
           <code class="ruby">    hash</code>
         </li>

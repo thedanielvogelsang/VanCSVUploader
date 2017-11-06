@@ -3,7 +3,7 @@ require 'csv'
 
 RSpec.describe 'survey_converter', type: :model do
   context "can take a good CSV row by row" do
-    xit "#returns the right format for VAN upload" do
+    it "#returns the right format for VAN upload" do
       correct_format = {
             "canvassContext": {
               "contactTypeId": 2,
