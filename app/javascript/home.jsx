@@ -13,11 +13,11 @@ export default class HomeMessage extends React.Component {
   }
 
   scrollListener() {
-    if (window.pageYOffset > 550) {
+    if (window.pageYOffset > 490) {
       ReactDOM.findDOMNode(this.refs.upArrow).style = "display:block";
       ReactDOM.findDOMNode(this.refs.downArrow).style = "display:none";
       ReactDOM.findDOMNode(this.refs.extraSpace).style = "display:block";
-    } else if(window.pageYOffset < 550) {
+    } else if(window.pageYOffset < 490) {
       ReactDOM.findDOMNode(this.refs.downArrow).style = "display:block";
       ReactDOM.findDOMNode(this.refs.upArrow).style = "display:none";
       ReactDOM.findDOMNode(this.refs.extraSpace).style = "display:none";
