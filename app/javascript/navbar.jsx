@@ -13,7 +13,7 @@ export default class Navbar extends React.Component {
           <a href='/'>back to home</a>
           </li>
           <li className='logout'>
-          <a href='/logout'>logout</a>
+          <a data-confirm="Are you sure you want to logout?" data-method="delete" href="/logout" rel="nofollow">logout</a>
           </li>
         </ul>
       </nav>

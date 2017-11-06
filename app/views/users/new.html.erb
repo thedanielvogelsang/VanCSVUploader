@@ -7,6 +7,7 @@
     <%= form_for :user, url: '/users', :html => {:class => 'form-signup'} do |f| %>
 
     Username: <%= f.text_field :username, :class => 'form-field'%>
+    Email: <%= f.email_field :email, :class => 'form-field' %>
     Password: <%= f.password_field :password, :class => 'form-field' %>
     Password Confirmation: <%= f.password_field :password_confirmation, :class => 'form-field' %>
     <%= f.submit "Sign Up!", :class => 'form-btn-signup', :id => 'form-btn'%>
