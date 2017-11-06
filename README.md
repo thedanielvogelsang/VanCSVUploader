@@ -8,16 +8,16 @@ Combining my political interests with my new-found skills, the problem presented
 
 Simple to use and replicable, VanCSVUploader uses a simple drag-and-drop system for CSV uploads, and then leaves the work to the app. While VanCSVUploader depends on synching the parser to survey questions, it is adaptable. Future adaptions could include a way for the admin to update survey questions internally. Feel free to put in a PullRequest!
 
-* Ruby version
+### Ruby version
 This application was built using Ruby 2.4.1 and Rails 5.1.
 
-* System dependencies
+### System dependencies
 Redis
 Node.js
 Webpack(er)
 Yarn or NPM
 
-* Deployment instructions/ Configuration
+### Deployment instructions/ Configuration
 
 bundle install
 rake db:create
@@ -37,11 +37,6 @@ USER_EMAIL: 'example@gmail.com'
 
 follow the (VAN Api Developer docs here)[https://developers.ngpvan.com/] to get started.
 
-* How to run the test suite
+### How to run the test suite
 
 run `rspec` to run unit, service, helper, and feature tests.
-
-* Services (job queues, cache servers, search engines, etc.)
-
-
-* ...
