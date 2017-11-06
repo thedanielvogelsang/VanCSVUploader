@@ -37,6 +37,10 @@ USER_EMAIL: 'example@gmail.com'
 
 follow the (VAN Api Developer docs here)[https://developers.ngpvan.com/] to get started.
 
+-----
+
+finally run `rails s` and navigate to https://localhost:3000/ to get started.
+
 ### How to run the test suite
 
 run `rspec` to run unit, service, helper, and feature tests.
