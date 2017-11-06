@@ -8,6 +8,7 @@ class CsvLoaderController < ApplicationController
   end
 
   def create
+    binding.pry
     file_path_to_save_to = "./tmp/#{DateTime.now}_file.csv"
     CsvImporterJob.perform_later(file_path_to_save_to)
     flash[:notice] = "File Uploaded. A summary will be sent upon completion."
