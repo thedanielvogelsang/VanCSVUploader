@@ -15,6 +15,7 @@ class SurveyConverter
     van_service_package[:city] = @csv_hash[:city]
     van_service_package[:stateOrProvince] = clean_state
     van_service_package[:email] = @csv_hash[:email]
+    add_activist_code
     convert_me(0, @csv_hash[:surveyQuestion1])
     convert_me(1, @csv_hash[:surveyQuestion2])
     convert_me(2, @csv_hash[:surveyQuestion3])
@@ -57,16 +58,25 @@ class SurveyConverter
     address_parts = @csv_hash[:addressLine1].split('#')
   end
 
-  def json_hash_structure()
+  def json_hash_structure
       canvass_response = {"canvassContext":{
-        "contactTypeId": 15,
-        "inputTypeId": 11,
+        "contactTypeId": 8,
+        "inputTypeId": 4,
         "dataCanvassed": Time.now
         },
       "resultCodeId": 'null',
       "responses": []
       }
       canvass_response
+  end
+
+  def add_activist_code
+    act_codes = {
+        "activistCodeId": 4272694,
+        "action": "Apply",
+        "type": "ActivistCode"
+      }
+    @json_hash[:responses] << act_codes
   end
 
   def convert_me(num, entry)

@@ -67,7 +67,7 @@ RSpec.describe VanService do
   it 'can find the id of a person' do
       survey_results_1_person =  {:firstName=>"Vogelsang",
          :lastName=>"Daniel",
-         :zipOrPostalCode=>80216,
+         :zipOrPostalCode=>80218,
          :phoneNumber=>"13162076632",
          :address=>["515 N Clarkson"],
          :city=>"Denver",
@@ -83,10 +83,18 @@ RSpec.describe VanService do
           }
         }
 
-      id = VanService.new.find_or_create(survey_results_1_person)
-      expect(id).to eq()
+      id = @service.find_or_create(survey_results_1_person)
+      expect(id).to eq(101073946)
   end
-  xit 'can find post canvass results given a known vanId' do
-
+  it 'can post canvass results given a known vanId' do
+    id = 101073946
+    responses = {"resultCodeId": "null",
+     "responses":
+      [{"activistCodeId": 4272694, "action": "Apply", "type": "ActivistCode"},
+       {"surveyQuestionId":268212, "surveyResponseId": 1118839, "type": "SurveyResponse"},
+       {"surveyQuestionId":268218, "surveyResponseId": 1118864, "type": "SurveyResponse"},
+       {"surveyQuestionId":268221, "surveyResponseId": 1118884, "type": "SurveyResponse"}]
+    }
+    results = @service.post(id, responses)
   end
 end
