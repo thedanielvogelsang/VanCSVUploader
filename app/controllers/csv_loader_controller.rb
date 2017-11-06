@@ -3,17 +3,18 @@ class CsvLoaderController < ApplicationController
   before_action :check_authorization, only: [:show]
 
   def show
-    if session[:notice] == 57454
+    if flash[:notice]
+      puts 'Yes'
+    else
+      puts 'No'
     end
   end
 
   def create
-    binding.pry
     file_path_to_save_to = "./tmp/#{DateTime.now}_file.csv"
     CsvImporterJob.perform_later(file_path_to_save_to)
     flash[:notice] = "File Uploaded. A summary will be sent upon completion."
     redirect_to csv_loader_path
-    session[:notice] = 57454
   end
 
   private
