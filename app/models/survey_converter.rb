@@ -88,22 +88,6 @@ class SurveyConverter
       "type": "SurveyResponse"
       }
     unless entry == nil
-<<<<<<< HEAD
-        hash[:surveyResponseId] = 1 unless entry.scan(/Knocking Doors/).empty?
-        hash[:surveyResponseId] = 2 unless entry.scan(/Calls to Voters/).empty?
-        hash[:surveyResponseId] = 3 unless entry.scan(/Hosting Events/).empty?
-        hash[:surveyResponseId] = 4 unless entry.scan(/Support/).empty?
-        hash[:surveyResponseId] = 5 unless entry.scan(/m not sure but I want to do something!/).empty?
-        hash[:surveyResponseId] = 9 if entry == 'Yes'
-        hash[:surveyResponseId] = 0 if entry == 'No'
-        hash[:surveyResponseId] = 'A' unless entry.scan(/Amharac/).empty?
-        hash[:surveyResponseId] = 'C' unless entry.scan(/Chinese/).empty?
-        hash[:surveyResponseId] = 'F' unless entry.scan(/French/).empty?
-        hash[:surveyResponseId] = 'K' unless entry.scan(/Korean/).empty?
-        hash[:surveyResponseId] = 'S' unless entry.scan(/Spanish/).empty?
-        hash[:surveyResponseId] = 'T' unless entry.scan(/Tagalog/).empty?
-        hash[:surveyResponseId] = 'V' unless entry.scan(/Vietnamese/).empty?
-=======
         hash[:surveyResponseId] = 1118839 unless entry.scan(/Knocking Doors/).empty?
         hash[:surveyResponseId] = 1118841 unless entry.scan(/Call to Voters/).empty?
         hash[:surveyResponseId] = 1118842 unless entry.scan(/Hosting Events/).empty?
@@ -118,7 +102,6 @@ class SurveyConverter
         hash[:surveyResponseId] = 1118864 unless entry.scan(/Spanish/).empty?
         hash[:surveyResponseId] = 1118880 unless entry.scan(/Tagalog/).empty?
         hash[:surveyResponseId] = 1118870 unless entry.scan(/Vietnamese/).empty?
->>>>>>> van-services
         hash[:surveyResponseId] = nil if hash[:surveyResponseId].nil?
     end
     hash
