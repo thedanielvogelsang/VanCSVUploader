@@ -30,15 +30,21 @@ RSpec.describe VanService do
       id = @service.find_or_create(survey_results_1_person)
       expect(id).to eq(101073946)
   end
-  it 'can post canvass results given a known vanId' do
+  xit 'can post canvass results given a known vanId' do
     id = 101073946
-    responses = {"resultCodeId": "null",
-     "responses":
-      [{"activistCodeId": 4272694, "action": "Apply", "type": "ActivistCode"},
-       {"surveyQuestionId":268212, "surveyResponseId": 1118839, "type": "SurveyResponse"},
-       {"surveyQuestionId":268218, "surveyResponseId": 1118864, "type": "SurveyResponse"},
-       {"surveyQuestionId":268221, "surveyResponseId": 1118884, "type": "SurveyResponse"}]
-    }
+    #works with or without canvassContext
+    responses = {"canvassContext": {
+                  "contactTypeId": 2,
+                  "inputTypeId": 14,
+                  "dateCanvassed": "2012-04-09T00:00:00-04:00"
+                },
+                "resultCodeId": "null",
+                "responses":
+          [{"activistCodeId": 4272694, "action": "Apply", "type": "ActivistCode"},
+           {"surveyQuestionId":268212, "surveyResponseId": 1118839, "type": "SurveyResponse"},
+           {"surveyQuestionId":268218, "surveyResponseId": 1118864, "type": "SurveyResponse"},
+           {"surveyQuestionId":268221, "surveyResponseId": 1118884, "type": "SurveyResponse"}]
+        }
     results = @service.post(id, responses)
   end
 end
