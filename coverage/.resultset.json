@@ -30,13 +30,21 @@
         1,
         null
       ],
-      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/jobs/send_email_job.rb": [
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/mailers/user_mailer.rb": [
         1,
         1,
         null,
         1,
+        2,
+        2,
         null,
         null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/mailers/application_mailer.rb": [
+        1,
+        1,
+        1,
         null
       ],
       "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/models/user.rb": [
@@ -86,7 +94,7 @@
         1,
         null,
         1,
-        4,
+        2,
         null,
         null,
         1,
@@ -116,6 +124,9 @@
         null,
         null,
         1,
+        0,
+        0,
+        0,
         null,
         null,
         1,
@@ -131,8 +142,6 @@
         null,
         1,
         2,
-        2,
-        0,
         null,
         null,
         null,
@@ -143,6 +152,8 @@
         0,
         0,
         null,
+        null,
+        1,
         null,
         1,
         2,
@@ -176,6 +187,7 @@
         null,
         null,
         null,
+        null,
         1,
         2,
         null,
@@ -204,7 +216,6 @@
         13,
         13,
         13,
-        null,
         null,
         null,
         1,
@@ -315,12 +326,6 @@
         0,
         0
       ],
-      "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/mailers/application_mailer.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
       "/Users/thedanielvogelsang/TuringFolder/4module/Capstone/Van_CSV_Uploader/app/models/csv_importer.rb": [
         0,
         0,
@@ -348,9 +353,9 @@
         0,
         0,
         0,
-        null,
-        null,
         0,
+        null,
+        null,
         0,
         null,
         0,
@@ -360,6 +365,6 @@
         0
       ]
     },
-    "timestamp": 1509907862
+    "timestamp": 1509974034
   }
 }

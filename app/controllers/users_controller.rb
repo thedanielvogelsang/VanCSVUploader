@@ -7,10 +7,8 @@ class UsersController < ApplicationController
     if password_check && @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Logged in as #{@user.username}"
-      binding.pry
       redirect_to csv_loader_path
     else
-      binding.pry
       redirect_to :new_user
       flash[:notice] = "Unsuccessful user creation, check passwords and try again"
     end

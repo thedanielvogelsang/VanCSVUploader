@@ -22,7 +22,6 @@ class SurveyConverter
     return van_service_package
   end
 
-
   def self.convert(csv_hash)
     new(csv_hash).clean_for_post
   end
