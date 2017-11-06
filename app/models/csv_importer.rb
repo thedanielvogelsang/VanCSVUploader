@@ -23,14 +23,14 @@ class CSVImporter
                           surveyQuestion3: row[:campaign_updates]
                         )
     end
-    VanService.post(survey_responses)
+    upload_results = VanService.find_or_create_all_and_post(survey_responses)
+    send_summary_email(upload_results)
     # VanService.post_survey(survey_responses)
-    #change this over to end of Post
-    send_summary_email
+    # change this over to end of Post
   end
 
-  def send_summary_email
-    SendEmailJob.perform_later
+  def send_summary_email(upload_results)
+    UserMailer.send_summary(upload_results).deliver_now
   end
 
 end

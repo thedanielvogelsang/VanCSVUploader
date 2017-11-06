@@ -15,13 +15,13 @@ class SurveyConverter
     van_service_package[:city] = @csv_hash[:city]
     van_service_package[:stateOrProvince] = clean_state
     van_service_package[:email] = @csv_hash[:email]
+    add_activist_code
     convert_me(0, @csv_hash[:surveyQuestion1])
     convert_me(1, @csv_hash[:surveyQuestion2])
     convert_me(2, @csv_hash[:surveyQuestion3])
     van_service_package[:responses] = @json_hash
     return van_service_package
   end
-
 
   def self.convert(csv_hash)
     new(csv_hash).clean_for_post
@@ -57,10 +57,10 @@ class SurveyConverter
     address_parts = @csv_hash[:addressLine1].split('#')
   end
 
-  def json_hash_structure()
+  def json_hash_structure
       canvass_response = {"canvassContext":{
-        "contactTypeId": 15,
-        "inputTypeId": 11,
+        "contactTypeId": 8,
+        "inputTypeId": 4,
         "dataCanvassed": Time.now
         },
       "resultCodeId": 'null',
@@ -69,11 +69,20 @@ class SurveyConverter
       canvass_response
   end
 
+  def add_activist_code
+    act_codes = {
+        "activistCodeId": 4272694,
+        "action": "Apply",
+        "type": "ActivistCode"
+      }
+    @json_hash[:responses] << act_codes
+  end
+
   def convert_me(num, entry)
     if !entry.nil?
       responses = entry.split(',')
       responses.each do |answer|
-        @json_hash[:responses] << survey_parser(num, answer)
+        @json_hash[:responses] << survey_parser(num, answer) unless nil
       end
     else
       @json_hash[:responses] << survey_parser(num, entry)
@@ -81,27 +90,27 @@ class SurveyConverter
   end
 
   def survey_parser(num, entry)
-    survey_ids = [123, 234, 345]
+    survey_ids = [268212, 268218, 268221]
     hash = {
       "surveyQuestionId": survey_ids[num],
       "surveyResponseId": nil,
       "type": "SurveyResponse"
       }
     unless entry == nil
-        hash[:surveyResponseId] = 1 unless entry.scan(/Knocking Doors/).empty?
-        hash[:surveyResponseId] = 2 unless entry.scan(/Call to Voters/).empty?
-        hash[:surveyResponseId] = 3 unless entry.scan(/Hosting Events/).empty?
-        hash[:surveyResponseId] = 4 unless entry.scan(/Support/).empty?
-        hash[:surveyResponseId] = 5 unless entry.scan(/m not sure but I want to do something!/).empty?
-        hash[:surveyResponseId] = 9 if entry == 'Yes'
-        hash[:surveyResponseId] = 0 if entry == 'No'
-        hash[:surveyResponseId] = 'A' unless entry.scan(/Amharac/).empty?
-        hash[:surveyResponseId] = 'C' unless entry.scan(/Chinese/).empty?
-        hash[:surveyResponseId] = 'F' unless entry.scan(/French/).empty?
-        hash[:surveyResponseId] = 'K' unless entry.scan(/Korean/).empty?
-        hash[:surveyResponseId] = 'S' unless entry.scan(/Spanish/).empty?
-        hash[:surveyResponseId] = 'T' unless entry.scan(/Tagalog/).empty?
-        hash[:surveyResponseId] = 'V' unless entry.scan(/Vietnamese/).empty?
+        hash[:surveyResponseId] = 1118839 unless entry.scan(/Knocking Doors/).empty?
+        hash[:surveyResponseId] = 1118841 unless entry.scan(/Call to Voters/).empty?
+        hash[:surveyResponseId] = 1118842 unless entry.scan(/Hosting Events/).empty?
+        hash[:surveyResponseId] = 1118843 unless entry.scan(/Support/).empty?
+        hash[:surveyResponseId] = 1118844 unless entry.scan(/m not sure but I want to do something!/).empty?
+        hash[:surveyResponseId] = 1118884 if entry == 'Yes'
+        hash[:surveyResponseId] = 1118885 if entry == 'No'
+        hash[:surveyResponseId] = 1118873 unless entry.scan(/Amharac/).empty?
+        hash[:surveyResponseId] = 1118871 unless entry.scan(/Chinese/).empty?
+        hash[:surveyResponseId] = 1118866 unless entry.scan(/French/).empty?
+        hash[:surveyResponseId] = 1118878 unless entry.scan(/Korean/).empty?
+        hash[:surveyResponseId] = 1118864 unless entry.scan(/Spanish/).empty?
+        hash[:surveyResponseId] = 1118880 unless entry.scan(/Tagalog/).empty?
+        hash[:surveyResponseId] = 1118870 unless entry.scan(/Vietnamese/).empty?
         hash[:surveyResponseId] = nil if hash[:surveyResponseId].nil?
     end
     hash
